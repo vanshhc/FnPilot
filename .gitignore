@@ -1,0 +1,21 @@
+.build/
+.swiftpm/
+.DS_Store
+
+.build-runtime/
+
+# Local signing configuration and compiled runtime; keep source builds portable.
+signing.json
+Resources/Runtime/
+Validation/signing-continuity.json
+Validation/background-listener-check.txt
+Validation/binary-checksums.txt
+__pycache__/
+*.pyc
+*.app/
+*.gguf
+*.p12
+*.pfx
+*.key
+.env
+.env.*

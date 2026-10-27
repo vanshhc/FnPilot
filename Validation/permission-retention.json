@@ -1,0 +1,22 @@
+{
+  "test": "Signed bundle version 2 to 3 update and independent app restart",
+  "code_hash_before": "628ff287e54b9ef53c492eb2a8ee834cdc53e80e",
+  "code_hash_after": "460b5cb21f20cf2fd45c040c8923dce47f65a504",
+  "designated_requirement_sha256": "b4f01bfd2d8489ea8a8824683aa62c97d56af91da5dfa86619eb25d10a886ce8",
+  "permissions_before": {
+    "kTCCServiceListenEvent": 2,
+    "kTCCServiceMicrophone": 2,
+    "kTCCServiceAccessibility": 2
+  },
+  "permissions_after": {
+    "kTCCServiceListenEvent": 2,
+    "kTCCServiceMicrophone": 2,
+    "kTCCServiceAccessibility": 2
+  },
+  "all_three_permissions_retained": true,
+  "background_listener_enabled_after_update": true,
+  "permission_settings_changed_during_update": false,
+  "audio_recorded": false,
+  "commands_executed": false,
+  "evidence": "Own-app TCC preflight results and CGGetEventTapList; shell-host permission results were not used."
+}

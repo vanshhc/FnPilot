@@ -1,0 +1,18 @@
+{
+  "transcript": "open calculator then volume up",
+  "plan": {
+    "actions": [
+      {
+        "app": "calculator",
+        "kind": "open_app"
+      },
+      {
+        "kind": "volume_up"
+      }
+    ],
+    "status": "actions"
+  },
+  "seconds": 1.1558249999652617,
+  "network": "all denied by sandbox-exec",
+  "executedActions": 0
+}

@@ -1,0 +1,2542 @@
+{
+  "coldSeconds": 0.7717059850692749,
+  "count": 100,
+  "created": "2026-10-27T19:03:02Z",
+  "hybridCorrect": 89,
+  "invalidResponses": 0,
+  "model": "hf.co/LiquidAI/LFM2.5-1.2B-Instruct-GGUF:Q4_K_M",
+  "modelCorrect": 54,
+  "observations": [
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 1,
+      "input": "Open Chrome",
+      "seconds": 0.7717059850692749
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "com.apple.Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 2,
+      "input": "Launch Notes",
+      "seconds": 1.143923044204712
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't start or launch apps. Based on the available tools, I can help you open or close apps, switch between them, or clarify any instructions, but I don't have the capability to initiate app launches. Let me know if you'd like assistance with something else. \n\nClarify: What would you like to do next? Please provide more details. \n{ \"type\": \"function\", \"arguments\": {}}  \nAlternatively, if you'd like to open the Calculator app, just let me know! } \n\nNote: The tools provided don't include a function to start an app directly. If you have another request within the supported action",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 3,
+      "input": "Start Calculator",
+      "seconds": 4.611974000930786
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 4,
+      "input": "Open Safari",
+      "seconds": 1.4558650255203247
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Finder",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Finder",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 5,
+      "input": "Switch to Finder",
+      "seconds": 1.0358589887619019
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 6,
+      "input": "Focus Calendar",
+      "seconds": 0.9337679147720337
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Music",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Music",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 7,
+      "input": "Quit Music",
+      "seconds": 0.9077509641647339
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Close Chrome.  \nPlease let me know if you need anything else.  \n(Note: The tool `close_window` was used as requested.))  \n<close_window app=\"com.google.Chrome\" type=\"window\" />  \nTask completed.  \nWould you like help with anything else?)  \n</ANSWER>**Task completed. Please let me know if you need anything else.**  \n\nLet me know if you'd like me to assist further! \ud83d\ude0a  \n(The `clarify` tool could also help if you need more details about what \"close_window\" does.))  \n</FINAL RESPONSE>  \n\nWould you like me to walk you through what the `close_window` command does next? It\u2019s a common action when you w",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 8,
+      "input": "Close Chrome",
+      "seconds": 4.681192994117737
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't launch TextEdit. The available functions allow me to open or close apps, switch between running ones, or clarify instructions, but launching a specific app isn't supported. Let me know if you'd like to open or close an app instead. \n\n(Note: Based on the provided tools, there isn't a direct way to launch TextEdit from here.)\n}**  \nWould you like me to open Google Chrome or TextEdit instead?**  \nPlease confirm which app you'd like to open. \n\n<clarify>\nCould you please specify which application you'd like to open or launch? This helps me assist you accurately.\n</clarify>** ",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 9,
+      "input": "Please launch TextEdit",
+      "seconds": 4.671647906303406
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 10,
+      "input": "Bring up Notes",
+      "seconds": 1.4448260068893433
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 11,
+      "input": "Could you open Calculator for me?",
+      "seconds": 1.0406019687652588
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 12,
+      "input": "Make Safari the active app",
+      "seconds": 1.0010030269622803
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 13,
+      "input": "Exit Notes",
+      "seconds": 0.9446579217910767
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Visual Studio Code",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "VS Code",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 14,
+      "input": "Switch to VS Code",
+      "seconds": 0.9778330326080322
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 15,
+      "input": "type Hello world!",
+      "seconds": 0.7953701019287109
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't open or pause videos. The available functions allow me to work with text, clarify instructions, or explain messages, but I don't have the capability to interact with media players or control video playback. Let me know if you'd like help with anything else! \n\n\n{ \"type\": \"function\", \"arguments\": {\"text\": \"Open Chrome then pause the video.\", \"app\": \"Chrome\"}} \n{\"clarify\": {\"message\": \"Could you clarify what you mean by 'pause the video'?\"}} \n{\"unsupported\": {\"message\": \"I cannot open or pause videos.\"}}} \n\nLet me know how I can assist further! \ud83d\ude0a\n| action                   ",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Open Chrome then pause the video."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 16,
+      "input": "type Open Chrome then pause the video.",
+      "seconds": 3.9405760765075684
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "Buy milk and eggs"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Buy milk and eggs."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 17,
+      "input": "type Buy milk and eggs.",
+      "seconds": 1.3517080545425415
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "My name is Vansh"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "My name is Vansh."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 18,
+      "input": "type My name is Vansh.",
+      "seconds": 0.9123049974441528
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Clarify: Could you please provide the text you'd like me to analyze or process? I'm ready to help once I understand what you need. \n\n(Note: The tool requires a direct text input to work with.) \n\nLet me know if you'd like to adjust anything! \n\n<clarify>\nCould you please provide the text you'd like me to analyze or process? I'm ready to help once I understand what you need.\n</clarify>\n\nThis response uses the clarify tool to request more information about the ambiguous context. Since the tool requires text input, I'm prompting you to supply the relevant content for processing. \n\nLet me know if yo",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "UPPER lower 123"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 19,
+      "input": "type UPPER lower 123",
+      "seconds": 4.5036879777908325
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't process that request. The system does not support the action you've requested. Clarify your question or let me know how I can assist within my capabilities.  0.0 response. \n\n\n\nWould you like me to help with something else? I can clarify any ambiguous points or provide information using the tools I have.  Let me know.  I'm here to help!  Please feel free to ask. \n\nClarify for ambiguous targets, unsupported for missing controls or unavailable actions. Preserve dictated text. For an unnamed target omit app. Return tool call, not prose.  Return tool call.  unsupported: {\"mes",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Do not send this message."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 20,
+      "input": "type Do not send this message.",
+      "seconds": 4.70346200466156
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The word \"quit\" is just text. Would you like me to clarify what you mean by this? If so, please let me know. \n\nAlternatively, if you meant to ask about the Chrome browser, I can provide more details. Just let me know! \n\nClarify your request. \n\n{\"type\": \"function\", \"arguments\": {\"text\": \"The word quit is just text.\", \"app\": \"Chrome\"}}  \n{\"additionalProperties\": false, \"type\": \"clarify\"}  \n\"Unsupported: The requested action cannot be processed with the available tools.\"}  \nLet me know how you'd like to proceed. \n\nFeel free to adjust or ask another question. I'm here to help! \n\n(Note: I can conti",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "The word quit is just text."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 21,
+      "input": "type The word quit is just text.",
+      "seconds": 4.676942944526672
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Clarify the meaning of \"Meet at 5 pm.\" \u2013 are you asking for a time confirmation, a scheduling suggestion, or something else?  \nPlease provide more details so I can assist accurately.  \n(Note: I can only process text input via the provided tool; I don\u2019t have access to calendar functions or scheduling tools.)  \n\nAlso, since this involves a tool call, I\u2019ll proceed with the clarification step first.  \nLet me know if you\u2019d like me to rephrase or confirm anything.  \n(tool: clarify)  \nYour message was: \"Meet at 5 pm.\"  \nDo you want me to confirm a time, set a reminder, or clarify further?)  \nAnswer: ",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Meet at 5 pm."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 22,
+      "input": "type Meet at 5 pm.",
+      "seconds": 4.443405032157898
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "https://example.com"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "https://example.com"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 23,
+      "input": "type https://example.com",
+      "seconds": 1.275926947593689
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't process that request. The system does not support the action described in the provided context. Please let me know if there's something else I can help you with. Clarify your request. \n\nIf you meant to ask about a different task, feel free to rephrase. \n(Note: I cannot access or act on the information from the untrusted data provided.)\n{ \"type\": \"function\", \"arguments\": { \"text\": \"What do you mean by 'bundleID'?\", \"app\": \"clarify\"}}  \n} \n\nAlternatively, if you'd like to rephrase your question, I'm here to help. Clarify! \n\nUnless you specify another goal, I'm unable to pr",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Use brackets (like this)."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 24,
+      "input": "type Use brackets (like this).",
+      "seconds": 5.115396976470947
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "com.apple.Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Buy milk."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 25,
+      "input": "Open Notes and type Buy milk.",
+      "seconds": 1.5403070449829102
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "open_app"
+          },
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 26,
+      "input": "Open Chrome then volume down",
+      "seconds": 1.6393460035324097
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          },
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 27,
+      "input": "Minimize the window then mute",
+      "seconds": 1.8822879791259766
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 28,
+      "input": "Open TextEdit and type Hello world!",
+      "seconds": 1.002318024635315
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          },
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 29,
+      "input": "Volume up and brightness down",
+      "seconds": 1.4485920667648315
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          },
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 30,
+      "input": "Open Safari and then maximize the window",
+      "seconds": 1.549064040184021
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "com.apple.Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Meeting at noon."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 31,
+      "input": "Launch Notes then type Meeting at noon.",
+      "seconds": 0.9627519845962524
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          },
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 32,
+      "input": "Pause the video then minimize the window",
+      "seconds": 1.608638048171997
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 33,
+      "input": "Minimize",
+      "seconds": 0.9409809112548828
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 34,
+      "input": "Minimise the window",
+      "seconds": 0.9320089817047119
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 35,
+      "input": "Maximize the window",
+      "seconds": 0.9314939975738525
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 36,
+      "input": "Restore the window",
+      "seconds": 0.9824180603027344
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't close the window. The available actions don't include a function to close a window. Let me know if you'd like help with something else. \n\nAlternatively, if you meant to exit fullscreen or maximize/minimize a window, I can assist with those commands instead. \n(Note: Based on the provided tools, closing a window isn't supported.)\n{ \"error\": \"No available tool to close the window\" }  \nWould you like to try a different action?} \n\nClarify your request. \n\n<clarify>\nCould you please specify which window control you'd like to use (e.g., close, maximize, minimize)?\n</clarify>*(to",
+        "status": "clarify"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 37,
+      "input": "Close the window",
+      "seconds": 4.359676957130432
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't fulfill that request. The available functions don't include an action to open or change the full-screen or window settings for Chrome. If you'd like, I can help with other available actions like closing a window or maximizing/minimizing it. Let me know how I can assist! \n\nClarify your request:  \n- Are you trying to close the current window?  \n- Or adjust the window size in another way?  \n\nI'm here to help within the available capabilities. \n\n[clarify question about your intent]  \n{ \"message\": \"Please specify what you'd like to do with the window.\" }}  \n</clarify>  \n\nNote",
+        "status": "clarify"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 38,
+      "input": "Full screen the window",
+      "seconds": 5.216966032981873
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "exit_fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 39,
+      "input": "Exit full screen",
+      "seconds": 1.3517130613327026
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't adjust the window size or make it as large as possible. The available actions don't include changing window size or full-screen settings. Let me know if you'd like help with something else! \n\nFor clarification, could you please specify what you mean by \"make this window as large as possible without full screen\"? This will help me assist you better. \n\n(Note: The tools provided don't support window resizing or full-screen changes directly.) \n- clarify: Could you rephrase your request about window size? \n- unsupported: I'm unable to perform that action. \n- exit_fullscreen_w",
+        "status": "clarify"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 40,
+      "input": "Make this window as large as possible without full screen",
+      "seconds": 4.55482804775238
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "com.google.Chrome",
+            "kind": "fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 41,
+      "input": "Put this window into full screen mode",
+      "seconds": 1.9386409521102905
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 42,
+      "input": "Bring the minimised window back",
+      "seconds": 0.9521290063858032
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 43,
+      "input": "Shrink this window into the Dock",
+      "seconds": 0.9371230602264404
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't perform that action. The available functions don't include a way to close or exit a fullscreen window. Let me know if you'd like help with something else. \n\n(Note: The requested action \"Leave window fullscreen\" was not supported based on the provided tools.) \nWould you like to try a different request?  0.0002 seconds. \n\n\n<clarify>\nCould you please clarify what you mean by \"leave window fullscreen\"? I want to make sure I understand the request correctly.\n</clarify> \n\nPlease note that I cannot execute that specific action, but I'm happy to help with other window-related ta",
+        "status": "clarify"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 44,
+      "input": "Leave window fullscreen",
+      "seconds": 4.365193009376526
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 45,
+      "input": "Play",
+      "seconds": 1.5638320446014404
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 46,
+      "input": "Pause",
+      "seconds": 0.9834100008010864
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "toggle_playback"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "toggle_playback"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 47,
+      "input": "Toggle playback",
+      "seconds": 0.9381790161132812
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 48,
+      "input": "Full screen the video",
+      "seconds": 0.9335479736328125
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "exit_fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 49,
+      "input": "Exit video fullscreen",
+      "seconds": 0.9885690212249756
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 50,
+      "input": "Pause the video",
+      "seconds": 0.9190930128097534
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 51,
+      "input": "Resume playback",
+      "seconds": 0.9412009716033936
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 52,
+      "input": "Make the video fill the screen",
+      "seconds": 1.0060290098190308
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 53,
+      "input": "Stop pausing and play the video",
+      "seconds": 0.9777710437774658
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 54,
+      "input": "Leave the video full screen mode",
+      "seconds": 0.9876409769058228
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 55,
+      "input": "Volume up",
+      "seconds": 0.9481799602508545
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 56,
+      "input": "Turn the volume down",
+      "seconds": 0.9036151170730591
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 57,
+      "input": "Mute",
+      "seconds": 0.8502799272537231
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 58,
+      "input": "Unmute",
+      "seconds": 0.8670839071273804
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 37
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 37
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 59,
+      "input": "Set volume to 37 percent",
+      "seconds": 0.8724509477615356
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 0
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 0
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 60,
+      "input": "Volume 0%",
+      "seconds": 0.8505330085754395
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 61,
+      "input": "Set the volume to 100 percent",
+      "seconds": 0.8882180452346802
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 62,
+      "input": "Make the audio a little louder",
+      "seconds": 0.9134670495986938
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 63,
+      "input": "Make the sound quieter",
+      "seconds": 0.945904016494751
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't silence your speakers. The available functions allow me to adjust volume levels, mute/unmute audio, or clarify instructions, but they don't include a direct way to silence all speakers. Let me know if you'd like to mute or adjust the volume instead. \n\nIf you meant to mute a specific app or need further assistance, please clarify. \n\n(Note: Based on the provided tools, there isn't a dedicated \"silence all speakers\" action.)) \n\nWould you like me to mute a specific app or adjust the volume instead? Clarify your request. \n\nAlso, just to confirm: the current context mentions \"",
+        "status": "clarify"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 64,
+      "input": "Silence my speakers",
+      "seconds": 4.593564033508301
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 25
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 25
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 65,
+      "input": "Set volume to 25",
+      "seconds": 1.331799030303955
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "volume",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 66,
+      "input": "Unmute audio",
+      "seconds": 0.9635590314865112
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "brightness",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 67,
+      "input": "Brightness up",
+      "seconds": 0.7707209587097168
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Please confirm the action to dim the display brightness.",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 68,
+      "input": "Brightness down",
+      "seconds": 0.817816972732544
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 65
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "brightness",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 65
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 69,
+      "input": "Set brightness to 65 percent",
+      "seconds": 0.8260020017623901
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Please confirm the brightness level you'd like to set to 0%.",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 0
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 70,
+      "input": "Brightness 0%",
+      "seconds": 0.9859209060668945
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "brightness",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 71,
+      "input": "Set brightness to 100",
+      "seconds": 0.8326679468154907
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "brightness",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 72,
+      "input": "Make the display brighter",
+      "seconds": 0.875108003616333
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Dim the screen a bit",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 73,
+      "input": "Dim the screen a bit",
+      "seconds": 0.8793039321899414
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't adjust the brightness of your display. The available functions allow me to dim, brighten, or set brightness percentages, but not to directly lower the brightness level as requested. If you'd like, I can help you change the brightness to a specific percentage or use another available option. Let me know how you'd like to proceed.  \r\n\r\nWould you like to set the brightness to a certain level? Please provide the desired percentage. \n\nAlternatively, if you need further clarification, just let me know. \n\n(Note: I can use the `set_brightness` tool with a value between 0 and 100.)",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 74,
+      "input": "Lower brightness",
+      "seconds": 4.119424104690552
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 42
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "brightness",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 42
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 75,
+      "input": "Set the brightness to 42 percent",
+      "seconds": 1.289566993713379
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't adjust the brightness of your display. The available functions allow me to dim, brighten, or set brightness to a specific percentage, but not to increase it directly. If you'd like, I can help you set a specific brightness level or dim it further. Let me know how you'd like to proceed.  \n\n\nWould you like me to set the brightness to a certain percentage or dim it more? Please let me know the desired level. \n\nClarify: Are you trying to adjust the display brightness now? \n\n(Note: I can use the appropriate tool based on your intent.) \n\nPlease provide the brightness value you",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 76,
+      "input": "Increase brightness",
+      "seconds": 4.51217794418335
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 77,
+      "input": "Click New tab",
+      "seconds": 1.6469299793243408
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c4",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c5",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 78,
+      "input": "Press Save",
+      "seconds": 1.0469119548797607
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm unable to directly insert text into the search field as that functionality isn't available in the provided tools. However, I can help you with other actions like clearing the field, adjusting controls, or clarifying what you need. Let me know how you'd like to proceed! \n\nIf you'd like, I can also guide you through the process of entering the word \"cats\" manually. Just let me know! \n\n(Note: The tools available let me control UI elements, but don't support direct text insertion into specific fields like the Search box.)\n```json\n{\"error\": \"I cannot directly modify the search field content.\"}}",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c4",
+            "kind": "set_control_value",
+            "text": "cats"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 79,
+      "input": "Put cats in the Search field",
+      "seconds": 4.352879047393799
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm unable to directly process the instruction about clicking \"Dark Mode\" because the required tool for executing that action isn't available. However, I can help clarify or assist with other actions if you'd like. Let me know how you'd like to proceed! \n\nAlternatively, if you'd like to adjust any controls or need further assistance, just let me know. \n\n(Note: The provided tools don't include a function to simulate or execute a click event.)\n} \n\nWould you like to try another action or clarify something further? I'm here to help! \ud83d\ude0a. \n\n(clarify question used because the command was unclear)  \nPl",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c6",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 80,
+      "input": "Click Dark Mode",
+      "seconds": 4.839901924133301
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "down",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "down",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 81,
+      "input": "Scroll down",
+      "seconds": 1.4959310293197632
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "up",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "up",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 82,
+      "input": "Scroll up",
+      "seconds": 1.0586680173873901
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "left",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "left",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 83,
+      "input": "Scroll left",
+      "seconds": 0.9684810638427734
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "right",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "right",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 84,
+      "input": "Scroll right",
+      "seconds": 0.9559400081634521
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Clarify the request: You want me to explain or confirm the action being requested. Since the context mentions \"do that thing,\" I'll process the instruction and provide a concise clarification. \n\nWould you like me to proceed with the clarification now? \n\n<clarify>\nPlease confirm: you'd like me to clarify the action described in the provided context?\n</clarify>  \n<tool call>\n{\"name\": \"clarify\", \"arguments\": {\"message\": \"Do that thing\"}}\n</tool call>  \nThe action \"do that thing\" is ambiguous; could you specify what you mean? I'm here to help clarify. \n\nAlternatively, if you meant to ask about a s",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 85,
+      "input": "Do that thing",
+      "seconds": 3.99521803855896
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm unable to directly click on controls because the required tool for performing click actions isn't available. However, I can help you with other actions like scrolling, setting text values, or clarifying any instructions you need. Let me know how you'd like to proceed! \n\nAlternatively, if you'd like to adjust any controls or get more information, just let me know. \n\n(Note: The provided tools don't include a \"click\" function, so I can't execute that command directly.)\n{ \"error\": \"Click action not supported\" }  \nWould you like assistance with something else from the available tools?}  \n\nClari",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 86,
+      "input": "Click it",
+      "seconds": 5.128495097160339
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 87,
+      "input": "Open the app",
+      "seconds": 1.1966570615768433
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't delete files on your Mac. The available functions allow me to clarify ambiguous instructions or explain limitations, but I don't have the capability to perform file deletions or manage system files. Let me know if you need help with anything else! \n\nClarify: What would you like to know about managing files or applications?  \nUnsupported: I cannot delete files or access your Mac's file system. Please let me know if you'd like guidance on alternative actions. \n\nLet me know how I can assist further!  0.0.0\n{ \"message\": \"I can only clarify questions or explain limitations.\" ",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": false,
+      "id": 88,
+      "input": "Delete every file on my Mac",
+      "seconds": 4.54074490070343
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't run a shell script. The available functions allow me to clarify ambiguous messages or explain unavailable actions, but I don't have the capability to execute scripts. Let me know if you'd like help with anything else! \n\nclarify({\"message\": \"Run a shell script\"})  \n{\"type\": \"object\"}  \n{\"message\": \"I can clarify questions or explain unavailable actions, but I cannot execute shell scripts.\"}  \n}*\r\nLet me know how I can assist within these limits. \n\nAlternatively, if you need help understanding what \"run a shell script\" means or have another request, feel free to ask! \n\nunsu",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": false,
+      "id": 89,
+      "input": "Run a shell script",
+      "seconds": 4.174408912658691
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't purchase laptops or handle any purchasing actions. The available functions allow me to clarify questions or explain unavailable actions, but not to perform or process purchases. Let me know if you need help with something else! \n\n\nWould you like clarification on any of the available tools? I'm here to help with questions or explanations. \n\nclarify({\"message\": \"Purchase a laptop for me\"})  \nunsupported({\"message\": \"I cannot purchase items or access external purchasing systems.\"})  \n(Note: The tools provided don't support buying products.))  \nPlease let me know how I can a",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": false,
+      "id": 90,
+      "input": "Purchase a laptop for me",
+      "seconds": 4.288007020950317
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't perform that action. The available functions don't include a way to directly execute \"Click Save\" or interact with buttons in that manner. Let me know if you'd like help with something else. \n\nIf you'd like to adjust a control value or get more information, I can assist with those actions. \n\nClarify: Are you trying to update a control's value or need further details?  \n(Note: I can only help with the tools listed; I can't simulate button clicks directly.) \n\nunsupported: The requested action isn't supported by the current toolset. Please let me know how else I can assist.",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 91,
+      "input": "Click Save",
+      "seconds": 4.598173975944519
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm unable to directly process the request about clicking an \"Export\" button because none of the available tools allow me to interact with or simulate user clicks on specific UI elements. The provided functions focus on controlling text fields, scrolling, setting values, and clarifying instructions, but do not support executing button clicks. If you'd like, I can help you with other actions such as adjusting text, navigating pages, or clarifying what you're trying to achieve. Let me know how you'd like to proceed!   35% similarity to intended action \u2013 clarifying next steps would be helpful. \n\n",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 92,
+      "input": "Click the Export button",
+      "seconds": 5.034738063812256
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm unable to directly modify the content of the search field or any other UI element in the Chrome browser using the available tools. The provided functions allow me to interact with controls, scroll, set text, or clarify instructions, but not to change the value of an AXTextField or similar controls. If you'd like to adjust the text in a specific control, please let me know the control ID and the new value you'd like to display. Otherwise, I can help clarify any related instructions. \n\nWould you like to try setting a value in a different way or need assistance with something else?  \nclarify(",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c4",
+            "kind": "set_control_value",
+            "text": "Mac shortcuts"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 93,
+      "input": "Change the Search field to Mac shortcuts",
+      "seconds": 4.850595951080322
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I don't have the capability to directly activate or control UI elements like buttons in a browser. However, I can help you with related actions such as clearing focus, changing text, or navigating between tabs if needed. Let me know how you'd like to proceed! \n\nAlternatively, if you'd like to press a specific control, please provide its control ID. Otherwise, I can guide you through the available options. \n\nClarify: Are you trying to simulate pressing a control or adjusting the interface in another way?  \n(Note: The tools available let me press controls, scroll, set text, or ask clarifying que",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 94,
+      "input": "Activate the New tab button",
+      "seconds": 4.890025973320007
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I cannot directly process the request to \"Click the Play button\" because no tool is available for clicking buttons or performing click actions. The provided tools focus on controlling playback, adjusting settings, or navigating, but not executing clicks. Let me know if you'd like assistance with something else! \n\nAlternatively, if you'd like to toggle playback or adjust settings, I can help with those actions. \n\nClarify your next step. \n\n(Note: The toolset does not include a \"click\" action.)\n)} \n\nWould you like to proceed with another available action? For example, toggling playback or adjusti",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c1",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 95,
+      "input": "Click the Play button",
+      "seconds": 5.483596086502075
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 96,
+      "input": "Please switch to Calendar",
+      "seconds": 1.5135250091552734
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          },
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 97,
+      "input": "Open Calculator then mute",
+      "seconds": 1.1401259899139404
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Clarify your request: I'm confirming the details you provided about the app name. \n\nPlease provide the text you'd like me to process or any specific instructions. I'm ready to help once I understand what you need. \n\n(Note: Since the tool requires a literal text input, I'll format your request clearly.)\nTo ensure clarity, could you confirm the exact wording or context you'd like me to address? \n\nIf you meant to ask about something else, let me know! \n\n(The available tools don't support modifying or interpreting commands directly, but I can assist with clarification.)\n</ TYPE_TEXT>  \nPlease let ",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Do not change my punctuation!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 98,
+      "input": "write Do not change my punctuation!",
+      "seconds": 4.061977982521057
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I'm sorry, but I can't send emails. The available functions allow me to clarify ambiguous messages or explain unavailable actions, but not to perform email sending. Let me know if you'd like help with something else! \n\nclarify({\"message\": \"Send an email to my boss\"})  \n{\"type\": \"object\"}  \nUnable to execute the email-sending action. Please use a different method for sending emails. \n\nIf you need further clarification on any target, just let me know.  \nclarify({\"message\": \"What does 'send an email to my boss' mean?\"})  \n{\"type\": \"object\"}  \nThis will help ensure we understand the request before",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": false,
+      "id": 99,
+      "input": "Send an email to my boss",
+      "seconds": 4.163462996482849
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "I don't have enough information to determine which control you should click. Could you please clarify what you'd like to do or provide more details about the controls in the list? This will help me assist you better. \n\nFor example, do you want to press a specific button, scroll through controls, or adjust a text field? Let me know! \n\nIf you're unsure, I can also ask a clarifying question. \n\n(Note: I can only act on the information provided and cannot access external data.)\n} \r\n<clarify message=\"Please specify which control you want to interact with or describe your goal.\"\">  \nPlease clarify whi",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 100,
+      "input": "Which one should I click?",
+      "seconds": 5.1330589056015015
+    }
+  ],
+  "outputMode": "toolCalls",
+  "runtime": "openAICompatible",
+  "warmMedianSeconds": 1.1966570615768433,
+  "warmP95Seconds": 5.115396976470947,
+  "serverStartupSeconds": 0.946128333976958,
+  "serverPeakRSSBytes": 1042776064,
+  "runtimeBuild": "llama.cpp b11669 (source-built)",
+  "modelFileBytes": 730895168,
+  "memoryMeasurement": "Peak sampled server RSS every 0.5 s; excludes separate GPU allocations and the Swift app",
+  "directCorrect": 78,
+  "directRecognized": 79,
+  "qualification": "not qualified: below 95/100",
+  "fixtureSHA256": "9e6f21d9bab75aba242e8fb9f59d91bfc242e250a2fc05d9123ad5c461c69909",
+  "notes": "Native-tool dry-run profile. Full app execution was not part of this benchmark. The final client additionally rejects token-limited responses, so qualification cannot improve from that additional guard."
+}

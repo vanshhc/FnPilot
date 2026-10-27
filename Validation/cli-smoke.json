@@ -1,0 +1,43 @@
+[
+  {
+    "args": [
+      "parse",
+      "volume up"
+    ],
+    "expectedExit": 0,
+    "actualExit": 0
+  },
+  {
+    "args": [
+      "parse",
+      "type Open Chrome then quit nothing!"
+    ],
+    "expectedExit": 0,
+    "actualExit": 0
+  },
+  {
+    "args": [
+      "parse",
+      "open the app"
+    ],
+    "expectedExit": 2,
+    "actualExit": 2
+  },
+  {
+    "args": [
+      "parse",
+      "unknown command"
+    ],
+    "expectedExit": 3,
+    "actualExit": 3
+  },
+  {
+    "args": [
+      "parse",
+      "volume up",
+      "--execute"
+    ],
+    "expectedExit": 64,
+    "actualExit": 64
+  }
+]

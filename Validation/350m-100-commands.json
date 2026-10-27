@@ -1,0 +1,2428 @@
+{
+  "coldSeconds": 0.25592494010925293,
+  "count": 100,
+  "created": "2026-10-27T18:59:23Z",
+  "hybridCorrect": 84,
+  "invalidResponses": 0,
+  "model": "hf.co/LiquidAI/LFM2.5-350M-GGUF:Q4_K_M",
+  "modelCorrect": 26,
+  "observations": [
+    {
+      "actual": {
+        "actions": [],
+        "message": "Open Chrome",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 1,
+      "input": "Open Chrome",
+      "seconds": 0.25592494010925293
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 2,
+      "input": "Launch Notes",
+      "seconds": 0.21370792388916016
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Start Calculator",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 3,
+      "input": "Start Calculator",
+      "seconds": 0.24069499969482422
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 4,
+      "input": "Open Safari",
+      "seconds": 0.2767139673233032
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Finder",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Finder",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 5,
+      "input": "Switch to Finder",
+      "seconds": 0.27218401432037354
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The requested action \"Focus Calendar\" is not supported by the available tools. The provided tools only allow switching to an already running app or quitting an app. Since there is no tool to focus on a calendar, I cannot fulfill this request. Let me know if you'd like to switch to a running app or quit an app instead. \n\n<clarify>\nThe user's request to \"Focus Calendar\" is not supported by the available tools. The provided tools only allow switching to an already running app or quitting an app. Since there is no tool to focus on a calendar, I cannot fulfill this request.\n</clarify>\n\n<function>\n{",
+        "status": "unsupported"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 6,
+      "input": "Focus Calendar",
+      "seconds": 1.3508700132369995
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Quit Music",
+        "status": "unsupported"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Music",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 7,
+      "input": "Quit Music",
+      "seconds": 0.302219033241272
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 8,
+      "input": "Close Chrome",
+      "seconds": 0.6871020793914795
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 9,
+      "input": "Please launch TextEdit",
+      "seconds": 0.5801750421524048
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Bring up Notes",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 10,
+      "input": "Bring up Notes",
+      "seconds": 0.43967604637145996
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 11,
+      "input": "Could you open Calculator for me?",
+      "seconds": 0.3898739814758301
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The command to make Safari the active app does not have a direct tool available. However, you can open Safari by launching it from your browser and selecting Safari as the active app. If you need further assistance, let me know! \n\n<clarify>  \nThe provided tools do not include a function to open or manage apps. The available tools are for switching apps, quitting apps, or clarifying requests. Since there's no tool to open Safari, I cannot fulfill this request directly.  \n</clarify>  \n\n<quit_app>  \nThe app \"Safari\" is already active.  \n</quit_app>  \n\n<unsupported>  \nThe request to \"make Safari t",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 12,
+      "input": "Make Safari the active app",
+      "seconds": 1.5480509996414185
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Exit Notes",
+        "status": "clarify"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "quit_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 13,
+      "input": "Exit Notes",
+      "seconds": 0.24393796920776367
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Visual Studio Code",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "VS Code",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 14,
+      "input": "Switch to VS Code",
+      "seconds": 0.2998619079589844
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 15,
+      "input": "type Hello world!",
+      "seconds": 0.29768097400665283
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "type Open Chrome then pause the video.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Open Chrome then pause the video."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 16,
+      "input": "type Open Chrome then pause the video.",
+      "seconds": 0.29546594619750977
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Buy milk and eggs.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Buy milk and eggs."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 17,
+      "input": "type Buy milk and eggs.",
+      "seconds": 0.2792860269546509
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "My name is Vansh.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "My name is Vansh."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 18,
+      "input": "type My name is Vansh.",
+      "seconds": 0.3010740280151367
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "UPPER lower 123",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "UPPER lower 123"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 19,
+      "input": "type UPPER lower 123",
+      "seconds": 0.2957589626312256
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Do not send this message.",
+        "status": "unsupported"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Do not send this message."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 20,
+      "input": "type Do not send this message.",
+      "seconds": 0.2857999801635742
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The word quit is just text.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "The word quit is just text."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 21,
+      "input": "type The word quit is just text.",
+      "seconds": 0.2712230682373047
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Meet at 5 pm.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Meet at 5 pm."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 22,
+      "input": "type Meet at 5 pm.",
+      "seconds": 0.2631199359893799
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The provided tools do not include a function for interacting with external websites or APIs. The available tools are limited to type text, clarify, and unsupported actions. Since there is no tool to fetch or process content from \"example.com\" or execute a command, I cannot fulfill this request. Please ensure the tools are available or provide additional context. \n\n<error>  \nUnable to execute command or fetch content from \"example.com\". Available tools only support text manipulation, clarification, and unsupported actions.</error>  \n</>>altoaltoaltoalto>  \n\n---\n\n**Note:** The command \"type http",
+        "status": "unsupported"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "https://example.com"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 23,
+      "input": "type https://example.com",
+      "seconds": 1.6567610502243042
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Use brackets like this.",
+        "status": "clarify"
+      },
+      "category": "dictation",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Use brackets (like this)."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 24,
+      "input": "type Use brackets (like this).",
+      "seconds": 0.1902240514755249
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Buy milk."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 25,
+      "input": "Open Notes and type Buy milk.",
+      "seconds": 0.30621302127838135
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The user's request to open Chrome and then reduce the volume is not supported by the available tools. The provided tools only include functions for muting/sounding, volume adjustment, and unmuting sounds. There is no tool available to open a Chrome app or perform volume control actions. Would you like to proceed with a different task? (No action needed)  \n\nUnsupported message.  \n```json\n{\"name\": \"unsupported\", \"arguments\": {\"message\": \"volume\"}}\n```  \n```json\n{\"name\": \"volume_up\", \"arguments\": {}}  \n```  \n\nNo tool calls required.  \n\n```  \n```  \n```  \n```  \n```  \n```  \n```  \n```  \n```  \n```  \n`",
+        "status": "clarify"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Chrome",
+            "kind": "open_app"
+          },
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 26,
+      "input": "Open Chrome then volume down",
+      "seconds": 2.6440160274505615
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          },
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 27,
+      "input": "Minimize the window then mute",
+      "seconds": 0.3732419013977051
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "TextEdit",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Hello world!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 28,
+      "input": "Open TextEdit and type Hello world!",
+      "seconds": 0.28555405139923096
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Volume up and brightness down",
+        "status": "clarify"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          },
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 29,
+      "input": "Volume up and brightness down",
+      "seconds": 0.4794379472732544
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Safari",
+            "kind": "open_app"
+          },
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 30,
+      "input": "Open Safari and then maximize the window",
+      "seconds": 0.7218049764633179
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Notes",
+            "kind": "open_app"
+          },
+          {
+            "kind": "type_text",
+            "text": "Meeting at noon."
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 31,
+      "input": "Launch Notes then type Meeting at noon.",
+      "seconds": 0.4296339750289917
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          },
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 32,
+      "input": "Pause the video then minimize the window",
+      "seconds": 0.6365230083465576
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 33,
+      "input": "Minimize",
+      "seconds": 0.3817490339279175
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 34,
+      "input": "Minimise the window",
+      "seconds": 0.33761000633239746
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 35,
+      "input": "Maximize the window",
+      "seconds": 0.29749202728271484
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 36,
+      "input": "Restore the window",
+      "seconds": 0.3255850076675415
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "close_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 37,
+      "input": "Close the window",
+      "seconds": 0.3119610548019409
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 38,
+      "input": "Full screen the window",
+      "seconds": 0.32987797260284424
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Exit full screen",
+        "status": "unsupported"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 39,
+      "input": "Exit full screen",
+      "seconds": 0.29735803604125977
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "maximize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 40,
+      "input": "Make this window as large as possible without full screen",
+      "seconds": 0.3339320421218872
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 41,
+      "input": "Put this window into full screen mode",
+      "seconds": 0.4334089756011963
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "com.google.Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "restore_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 42,
+      "input": "Bring the minimised window back",
+      "seconds": 0.3578280210494995
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "windows",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "minimize_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 43,
+      "input": "Shrink this window into the Dock",
+      "seconds": 0.35005998611450195
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Leave window fullscreen",
+        "status": "unsupported"
+      },
+      "category": "windows",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_window"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 44,
+      "input": "Leave window fullscreen",
+      "seconds": 0.3331270217895508
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Play",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 45,
+      "input": "Play",
+      "seconds": 0.3534250259399414
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Pause",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 46,
+      "input": "Pause",
+      "seconds": 0.3060699701309204
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Toggle playback",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "toggle_playback"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 47,
+      "input": "Toggle playback",
+      "seconds": 0.31812596321105957
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Full screen the video",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 48,
+      "input": "Full screen the video",
+      "seconds": 0.3217519521713257
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Exit video fullscreen",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 49,
+      "input": "Exit video fullscreen",
+      "seconds": 0.3564540147781372
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Pause the video",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "pause"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 50,
+      "input": "Pause the video",
+      "seconds": 0.3276979923248291
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Resume playback",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 51,
+      "input": "Resume playback",
+      "seconds": 0.30231595039367676
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Make the video fill the screen",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 52,
+      "input": "Make the video fill the screen",
+      "seconds": 0.3160560131072998
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Stop pausing and play the video",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "play"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 53,
+      "input": "Stop pausing and play the video",
+      "seconds": 0.29358601570129395
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Leave the video full screen mode",
+        "status": "unsupported"
+      },
+      "category": "media",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "exit_fullscreen_video"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 54,
+      "input": "Leave the video full screen mode",
+      "seconds": 0.2907290458679199
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Volume up",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 55,
+      "input": "Volume up",
+      "seconds": 0.25964200496673584
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "turn the volume down",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 56,
+      "input": "Turn the volume down",
+      "seconds": 0.27412402629852295
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Mute",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 57,
+      "input": "Mute",
+      "seconds": 0.2754889726638794
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "unmute",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 58,
+      "input": "Unmute",
+      "seconds": 0.29558002948760986
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set volume to 37 percent",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 37
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 59,
+      "input": "Set volume to 37 percent",
+      "seconds": 0.3086700439453125
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Volume 0%",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 0
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 60,
+      "input": "Volume 0%",
+      "seconds": 0.2935410737991333
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set the volume to 100 percent",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 61,
+      "input": "Set the volume to 100 percent",
+      "seconds": 0.3076390027999878
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Make the audio a little louder",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 62,
+      "input": "Make the audio a little louder",
+      "seconds": 0.314020037651062
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "make the sound quieter",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "volume_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 63,
+      "input": "Make the sound quieter",
+      "seconds": 0.2788209915161133
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Silence my speakers",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 64,
+      "input": "Silence my speakers",
+      "seconds": 0.2820119857788086
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set volume to 25",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_volume",
+            "value": 25
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 65,
+      "input": "Set volume to 25",
+      "seconds": 0.30421292781829834
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "unmute audio",
+        "status": "unsupported"
+      },
+      "category": "volume",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "unmute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 66,
+      "input": "Unmute audio",
+      "seconds": 0.31352901458740234
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Brightness up",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 67,
+      "input": "Brightness up",
+      "seconds": 0.25039398670196533
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Brightness down",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 68,
+      "input": "Brightness down",
+      "seconds": 0.25477397441864014
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set brightness to 65 percent",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 65
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 69,
+      "input": "Set brightness to 65 percent",
+      "seconds": 0.25921201705932617
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The requested action to set display brightness to 0% is not supported by the available tools. The provided tools only include \"brightness_down\" and \"brightness_up\" for adjusting display brightness, but none support setting brightness to a specific percentage. \n\nWould you like me to proceed with a different action or clarify anything else? (Note: This is a hypothetical scenario, as no tool exists for brightness control.)  \n\nUnsupported message: \"Brightness 0%\"  \n\n<error>  \nThe requested action cannot be performed with the available tools.  \n</error>  \n\nWould you like to try another action or ad",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 0
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 70,
+      "input": "Brightness 0%",
+      "seconds": 1.6395740509033203
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set brightness to 100",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 100
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 71,
+      "input": "Set brightness to 100",
+      "seconds": 0.2078779935836792
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Make the display brighter",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 72,
+      "input": "Make the display brighter",
+      "seconds": 0.22586703300476074
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Dim the screen a bit",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": false,
+      "id": 73,
+      "input": "Dim the screen a bit",
+      "seconds": 0.33199501037597656
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Lower brightness",
+        "status": "clarify"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_down"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 74,
+      "input": "Lower brightness",
+      "seconds": 0.6269069910049438
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Set the brightness to 42 percent",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "set_brightness",
+            "value": 42
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 75,
+      "input": "Set the brightness to 42 percent",
+      "seconds": 0.5386959314346313
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "increase brightness",
+        "status": "unsupported"
+      },
+      "category": "brightness",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "brightness_up"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 76,
+      "input": "Increase brightness",
+      "seconds": 0.3537799119949341
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 77,
+      "input": "Click New tab",
+      "seconds": 0.4581509828567505
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c5",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c5",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 78,
+      "input": "Press Save",
+      "seconds": 0.37889695167541504
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Put cats in the Search field",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c4",
+            "kind": "set_control_value",
+            "text": "cats"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 79,
+      "input": "Put cats in the Search field",
+      "seconds": 0.31066393852233887
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c6",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c6",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 80,
+      "input": "Click Dark Mode",
+      "seconds": 0.3148469924926758
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "down",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "down",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 81,
+      "input": "Scroll down",
+      "seconds": 0.29490411281585693
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "up",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "up",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 82,
+      "input": "Scroll up",
+      "seconds": 0.2837700843811035
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "left",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "left",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 83,
+      "input": "Scroll left",
+      "seconds": 0.28972506523132324
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "direction": "right",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "direction": "right",
+            "kind": "scroll"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 84,
+      "input": "Scroll right",
+      "seconds": 0.2989180088043213
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "clarify(message=\"Do that thing\")\n\nThe provided tool does not support executing actions or commands. The available tool is the \"unsupported\" function, which explains that the requested action or control is unavailable. Since no specific action was requested, no tool calls are made. The result is:\n\n<clarify>\nThe \"unsupported\" tool explains that the action or control is unavailable. No tool calls are made.\n</clarify>\n\n<response>\nNo action can be performed. The \"unsupported\" tool confirms the control is unavailable.\n</response>\n\n<error>\nThe user's request could not be fulfilled. The clarify tool w",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": false,
+      "id": 85,
+      "input": "Do that thing",
+      "seconds": 1.2923840284347534
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The command \"Click it\" is available. To perform the action, you would need to use the \"press_control\" tool with the appropriate controlID. The controlID for \"Play\" is \"c1\" and \"Save\" is \"c5\". The app is \"Google Chrome\". \n\nWould you like to perform another action? \n \n- press_control\n- scroll\n- set_control_value\n- unsupported\n- clarify\n- or something else? \n \nWhat would you like to do next? \n \n(Note: The app field is not visible, so I cannot fill it.) \n\nPlease specify the action you'd like to perform. \n\nUnsupported\n \nWhat is the controlID for \"Play\"? \n \n(You can find this in the control IDs list",
+        "status": "clarify"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 86,
+      "input": "Click it",
+      "seconds": 1.8101680278778076
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 87,
+      "input": "Open the app",
+      "seconds": 0.32708799839019775
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The user's command to delete files on their Mac is not supported by any available tools. The provided \"unsupported\" tool explains that the requested action is unavailable, but no function exists to delete files or perform such actions. Therefore, no tool calls can be made for this request. \n\n<error>  \nUnable to fulfill the request: The command \"Delete every file on my Mac\" is not supported by any available tools.  \n</error></>>\n\n<tool>  \nNone of the provided tools can be used to fulfill the request.  \n</tool>>  \n\n---  \n**Note**: The user's instruction was ambiguous, and no applicable tool exis",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 88,
+      "input": "Delete every file on my Mac",
+      "seconds": 2.350498914718628
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The provided tools do not include a function for running shell scripts. The available tools are for clarifying ambiguous targets or explaining unavailable controls. Since there is no tool to execute shell scripts, I cannot fulfill the request. Please ensure the correct tool is used or provide additional context. \n\n<error>  \nUnable to execute shell script as no tool is available.  \n</error></>>\n\n<tool_call>  \n{\"name\": \"unsupported\", \"arguments\": {\"message\": \"Run a shell script\"}}  \n</tool_call>>  \n\n---  \n**Note**: The `unsupported` tool explains that the requested action is unavailable. If you ",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 89,
+      "input": "Run a shell script",
+      "seconds": 1.9105229377746582
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The provided tools do not include a function for purchasing a laptop. Therefore, I cannot perform this action. The available tools are for clarifying ambiguous targets or explaining unavailable actions. Let me know if you'd like assistance with something else! \n\n<clarify>\nThe user's request to \"Purchase a laptop\" cannot be fulfilled with the current tools. The available functions only support clarifying ambiguous targets or explaining unavailable actions. \n</clarify>\n\n<unsupported>\nThe \"unsupported\" tool is not applicable here, as the user's request falls outside the scope of the provided tool",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 90,
+      "input": "Purchase a laptop for me",
+      "seconds": 1.406054973602295
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The command \"Click Save\" is available. To perform the action, you would need to click the \"Save\" button in the Chrome app. If you need further assistance or want to press a specific control, let me know! \n\n(Note: This is a simulated scenario based on the provided context.) \n\nUnsupported action: The \"Click Save\" command is unavailable. Please try again later. \n\nWould you like to press a control or perform another action? \n\n(No app or control was specified in your request.) \n\n---\n\n**Answer**: Click Save.  \nWould you like to press a control or perform another action? \n\n(No app or control was spec",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": true,
+      "id": 91,
+      "input": "Click Save",
+      "seconds": 2.08725905418396
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The user wants to click the Export button. However, the available tools do not include a function to perform a click action. The provided tools are for pressing, scrolling, setting text fields, asking clarifications, or handling app controls. Since there is no tool to simulate a click action, I cannot execute the command. \n\nWould you like to proceed with a different action or clarify the request? \n\n<error>  \nThe requested action cannot be performed with the available tools.  \n</error></<>>>  \n\nLet me know how you'd like to proceed.  \n\n---\n\n**Unsupported Action**  \nThe requested action \"Click t",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 92,
+      "input": "Click the Export button",
+      "seconds": 1.6504629850387573
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The requested action to change the Search field to Mac shortcuts cannot be fulfilled with the provided tools. None of the available functions (press_control, scroll, set_control_value, clarify, unsupported) are designed to modify browser shortcuts or handle UI element changes. You may need to use browser developer tools or a different method to achieve this. \n\nWould you like guidance on how to find Mac shortcuts via developer tools? (Note: This is not supported by the current toolset.) \n\n<error>  \nUnable to fulfill request.  \n</error></<>>>altoalto>alto</alto>>alto>alto>alto>alto> \n\n---\n\n**Ans",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c4",
+            "kind": "set_control_value",
+            "text": "Mac shortcuts"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 93,
+      "input": "Change the Search field to Mac shortcuts",
+      "seconds": 2.2319339513778687
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "ui",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c3",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 94,
+      "input": "Activate the New tab button",
+      "seconds": 0.299435019493103
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Click the Play button",
+        "status": "clarify"
+      },
+      "category": "ui",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "controlID": "c1",
+            "kind": "press_control"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 95,
+      "input": "Click the Play button",
+      "seconds": 0.4824939966201782
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "open_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "apps",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calendar",
+            "kind": "focus_app"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 96,
+      "input": "Please switch to Calendar",
+      "seconds": 0.397724986076355
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "Open Calculator then mute",
+        "status": "clarify"
+      },
+      "category": "compound",
+      "correct": false,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "app": "Calculator",
+            "kind": "open_app"
+          },
+          {
+            "kind": "mute"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 97,
+      "input": "Open Calculator then mute",
+      "seconds": 0.5195859670639038
+    },
+    {
+      "actual": {
+        "actions": [
+          {
+            "app": "Google Chrome",
+            "kind": "type_text",
+            "text": "Do not change my punctuation!"
+          }
+        ],
+        "status": "actions"
+      },
+      "category": "dictation",
+      "correct": true,
+      "direct": true,
+      "expected": {
+        "actions": [
+          {
+            "kind": "type_text",
+            "text": "Do not change my punctuation!"
+          }
+        ],
+        "status": "actions"
+      },
+      "hybridCorrect": true,
+      "id": 98,
+      "input": "write Do not change my punctuation!",
+      "seconds": 0.3421679735183716
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The provided tools do not include a function for sending emails. The available tools are for clarifying ambiguous targets or explaining unavailable controls. Since there is no tool to send emails, I cannot fulfill this request. Let me know if you'd like to clarify a target or explore other options. \n\n<error>  \nUnavailable tool: unsupported  \n</error></>>\n\n<tool_call>  \n{\"name\": \"clarify\", \"arguments\": {\"message\": \"Send an email to my boss\"}}  \n</tool_call>>  \n\nNone of the provided tools can be used to fulfill this request. The user's task is unsupported.  \n\n<error>  \nUnsupported message  \n</er",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": true,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Unsupported",
+        "status": "unsupported"
+      },
+      "hybridCorrect": true,
+      "id": 99,
+      "input": "Send an email to my boss",
+      "seconds": 1.4834620952606201
+    },
+    {
+      "actual": {
+        "actions": [],
+        "message": "The user should click the \"New tab\" button. This is the only action available in the provided controls. \n\nUnsupported action: \"click\" (no valid action is available for the user's request).  \nUnsupported control: \"New tab\" (control ID \"c3\" is not in the provided controls).  \nUnsupported app: \"Google Chrome\" (no app is listed in the provided apps).  \nUnsupported app: \"com.google.Chrome\" (no app is listed in the provided bundles).  \nUnsupported control: \"Search\" (no control is available).  \n\n**Answer:** click the \"New tab\" button.  \n\n```json\n{\"name\": \"unsupported\", \"description\": \"The requested a",
+        "status": "unsupported"
+      },
+      "category": "clarification_or_unsupported",
+      "correct": false,
+      "direct": false,
+      "expected": {
+        "actions": [],
+        "message": "Please clarify",
+        "status": "clarify"
+      },
+      "hybridCorrect": false,
+      "id": 100,
+      "input": "Which one should I click?",
+      "seconds": 1.646470069885254
+    }
+  ],
+  "outputMode": "toolCalls",
+  "runtime": "openAICompatible",
+  "warmMedianSeconds": 0.3160560131072998,
+  "warmP95Seconds": 1.9105229377746582,
+  "serverStartupSeconds": 9.173411458963528,
+  "serverPeakRSSBytes": 602423296,
+  "runtimeBuild": "llama.cpp b11669 (source-built)",
+  "modelFileBytes": 229312224,
+  "memoryMeasurement": "Peak sampled server RSS every 0.5 s; excludes separate GPU allocations and the Swift app",
+  "directCorrect": 78,
+  "directRecognized": 79,
+  "qualification": "not qualified: below 95/100",
+  "fixtureSHA256": "9e6f21d9bab75aba242e8fb9f59d91bfc242e250a2fc05d9123ad5c461c69909",
+  "notes": "Native-tool dry-run profile. Full app execution was not part of this benchmark. The final client additionally rejects token-limited responses, so qualification cannot improve from that additional guard."
+}
