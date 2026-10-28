@@ -30,12 +30,11 @@ public struct DirectParser {
         if let groups = capture(#"^(?:please\s+)?(?:type|write|enter text)\s+(.+)$"#, original) {
             return Interpretation(actions: [Action("type_text", text: groups[0])])
         }
-        if let g = capture(#"^(?:please\s+)?(?:open|launch|start)\s+(.+?)\s+(?:and(?: then)?|then)\s+(?:type|write)\s+(.+)$"#, original), validAppName(g[0]) {
-            return Interpretation(actions: [Action("open_app", app: g[0]), Action("type_text", text: g[1])])
-        }
         let clean = original.trimmingCharacters(in: CharacterSet(charactersIn: ".!? ")).replacingOccurrences(of: #"^please\s+"#, with: "", options: [.regularExpression, .caseInsensitive])
-        if let separator = clean.range(of: #"\s+(?:and then|then|and)\s+"#, options: [.regularExpression, .caseInsensitive]) {
-            guard let first = parse(String(clean[..<separator.lowerBound])), let rest = parse(String(clean[separator.upperBound...])), first.actions.count + rest.actions.count <= 20 else { return nil }
+        if let separator = original.range(of: #"\s+(?:and then|then|and)\s+"#, options: [.regularExpression, .caseInsensitive]) {
+            guard let first = parse(String(original[..<separator.lowerBound])), let rest = parse(String(original[separator.upperBound...])), first.actions.count + rest.actions.count <= 20 else { return nil }
+            if first.status != "actions" { return first }
+            if rest.status != "actions" { return rest }
             return Interpretation(actions: first.actions + rest.actions)
         }
         let lower = clean.lowercased()

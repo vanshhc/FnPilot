@@ -7,6 +7,8 @@ final class ManagedRuntime: ObservableObject {
     @Published private(set) var running = false
     @Published private(set) var starting = false
     private var process: Process?
+    private var generation = UUID()
+    var onStateChange: ((String?) -> Void)?
     static let port = 18114
     static let endpoint = "http://127.0.0.1:18114/v1"
     static var binary: URL? {
@@ -18,35 +20,50 @@ final class ManagedRuntime: ObservableObject {
         guard panel.runModal() == .OK else { return nil }
         return panel.url
     }
-    func start(model: String, file selected: URL? = nil) async throws {
+    func start(model: String, file selected: URL? = nil, binary runtimeBinary: URL? = nil,
+               resolveFile: ((String) async throws -> URL)? = nil,
+               portAvailable: (() async -> Bool)? = nil) async throws {
         guard !starting else { return }
         if running { throw PilotError("Stop the bundled server before changing its model.") }
-        guard let binary = Self.binary else { throw PilotError("The bundled runtime is missing. Rebuild the app with the runtime resources, or use Ollama / another local server.") }
+        guard let binary = runtimeBinary ?? Self.binary else { throw PilotError("The bundled runtime is missing. Rebuild the app with the runtime resources, or use Ollama / another local server.") }
+        let operation = UUID(); generation = operation
         starting = true; defer { starting = false }
+        func checkStartup() throws {
+            try Task.checkCancellation()
+            guard generation == operation else { throw CancellationError() }
+        }
         let file: URL
         if let selected { file = selected }
         else if let saved = UserDefaults.standard.string(forKey: "gguf:\(model)"), FileManager.default.fileExists(atPath: saved) { file = URL(fileURLWithPath: saved) }
+        else if let resolveFile { file = try await resolveFile(model) }
         else { file = try await ollamaFile(model: model) }
+        try checkStartup()
         let handle = try FileHandle(forReadingFrom: file)
         let magic = try handle.read(upToCount: 4); try handle.close()
         guard magic == Data("GGUF".utf8) else { throw PilotError("The selected file is not a GGUF model.") }
         let health = URL(string: "http://127.0.0.1:\(Self.port)/health")!
         let session = URLSession(configuration: .ephemeral)
         defer { session.invalidateAndCancel() }
-        if let (_, response) = try? await session.data(from: health), (response as? HTTPURLResponse)?.statusCode == 200 { throw PilotError("Port \(Self.port) is already serving another process. Choose its endpoint manually or stop it before starting FnPilot's server.") }
+        let occupied: Bool
+        if let portAvailable { occupied = !(await portAvailable()) }
+        else { occupied = (try? await session.data(from: health)).map { ($0.1 as? HTTPURLResponse)?.statusCode == 200 } ?? false }
+        try checkStartup()
+        if occupied { throw PilotError("Port \(Self.port) is already serving another process. Choose its endpoint manually or stop it before starting FnPilot's server.") }
         let process = Process()
         process.executableURL = binary
         process.arguments = ["--model", file.path, "--alias", model, "--host", "127.0.0.1", "--port", String(Self.port), "--ctx-size", "4096", "--parallel", "1", "--n-gpu-layers", "99", "--jinja", "--no-webui", "--log-disable", "--threads", "2", "--threads-batch", "2"]
         process.qualityOfService = .utility
         process.standardOutput = FileHandle.nullDevice; process.standardError = FileHandle.nullDevice
-        try process.run(); self.process = process
+        try launch(process)
         do {
             for _ in 0..<120 {
-                try Task.checkCancellation()
+                try checkStartup()
                 guard process.isRunning else { throw PilotError("The bundled runtime could not load this model. Check GGUF compatibility or choose another runtime.") }
                 var request = URLRequest(url: health); request.timeoutInterval = 1
                 if let (_, response) = try? await session.data(for: request), (response as? HTTPURLResponse)?.statusCode == 200 {
-                    running = true
+                    try checkStartup()
+                    guard process.isRunning else { throw PilotError("The bundled runtime exited during startup.") }
+                    markReady()
                     UserDefaults.standard.set(file.path, forKey: "gguf:\(model)")
                     UserDefaults.standard.set(true, forKey: "useBundledRuntime")
                     return
@@ -56,9 +73,25 @@ final class ManagedRuntime: ObservableObject {
             throw PilotError("The local model did not finish loading. Try starting the server again.")
         } catch { stop(); throw error }
     }
+    func markReady() {
+        running = true
+        onStateChange?(nil)
+    }
+    func launch(_ process: Process) throws {
+        process.terminationHandler = { [weak self] ended in
+            Task { @MainActor in
+                guard let self, self.process === ended else { return }
+                self.process = nil; self.running = false
+                self.onStateChange?("The bundled server exited (status \(ended.terminationStatus)). Start it again to retry.")
+            }
+        }
+        try process.run(); self.process = process
+    }
     func stop() {
+        generation = UUID()
         if let process, process.isRunning { process.terminate() }
         process = nil; running = false
+        onStateChange?(nil)
     }
     private func ollamaFile(model: String) async throws -> URL {
         var request = URLRequest(url: URL(string: "http://127.0.0.1:11434/api/show")!)

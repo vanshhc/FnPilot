@@ -28,7 +28,7 @@ public enum CommandSequence {
         let clean = input.trimmingCharacters(in: .whitespacesAndNewlines)
         if clean.range(of: #"^(?:please\s+)?(?:type|write|enter text)\s"#, options: [.regularExpression, .caseInsensitive]) != nil { return [clean] }
         if clean.range(of: #"^(?:please\s+)?(?:(?:set|change)\s+(?!(?:the\s+)?(?:volume|brightness)\b).+\s+to\s+|put\s+)"#, options: [.regularExpression, .caseInsensitive]) != nil { return [clean] }
-        let pattern = #"\s+(?:and then|then|and)\s+(?=(?:open|launch|start|switch|focus|quit|close|minimi[sz]e|maximi[sz]e|restore|type|write|click|press|scroll|mute|unmute|volume|brightness|set|play|pause|exit|full\s?screen)\b)"#
+        let pattern = #"\s+(?:and then|then|and)\s+(?=(?:open|launch|start|switch|focus|quit|close|minimi[sz]e|maximi[sz]e|restore|type|write|enter text|click|press|scroll|mute|unmute|volume|brightness|set|play|pause|exit|full\s?screen)\b)"#
         guard let range = clean.range(of: pattern, options: [.regularExpression, .caseInsensitive]) else { return [clean] }
         return [String(clean[..<range.lowerBound])] + parts(String(clean[range.upperBound...]))
     }

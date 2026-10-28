@@ -22,6 +22,7 @@ public struct DirectUIParser {
         return nil
     }
     private func resolve(_ name: String, context: CommandContext, value: String?) -> Interpretation {
+        guard context.controlsComplete != false else { return Interpretation(status: "unsupported", message: "The control scan is incomplete. Narrow the target window and retry.") }
         let matches = context.controls.filter { normalize($0.label) == normalize(name) && (value == nil || ["AXTextField", "AXTextArea", "AXComboBox"].contains($0.role)) }
         guard matches.count == 1, let selected = matches.first else {
             return Interpretation(status: matches.isEmpty ? "unsupported" : "clarify", message: matches.isEmpty ? "No accessible control named ‘\(name)’ is available in the target app." : "Several controls are named ‘\(name)’. Which one do you mean?")

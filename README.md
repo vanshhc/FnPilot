@@ -117,4 +117,4 @@ swift run fnpilot-bench MODEL_ID Resources/commands100.json report.json \
   openAICompatible http://127.0.0.1:18114/v1 100 toolCalls
 ```
 
-Results report model-only and parser-first accuracy separately. See `VALIDATION.md` for hardware, measurements, methodology, and remaining verification limits.
+Results report model-only and parser-first accuracy separately. Parser-first runs use the desktop's sequence splitting, routing, and action checks with a simulated executor. Fixtures describe the initial app only: switching to another app clears its controls rather than reusing stale targets. These scores do not verify desktop execution or controls discovered after launch. See `VALIDATION.md` for hardware, measurements, methodology, and remaining verification limits. Previously saved benchmark results predate this shared routing.
