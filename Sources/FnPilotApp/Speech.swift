@@ -9,9 +9,6 @@ protocol SpeechRecognizer {
 
 actor WhisperSpeechRecognizer: SpeechRecognizer {
     private var pipe: WhisperKit?
-    static var decodingOptions: DecodingOptions {
-        DecodingOptions(language: "en", temperature: 0, temperatureFallbackCount: 0, skipSpecialTokens: true, withoutTimestamps: true, suppressBlank: true, concurrentWorkerCount: 1)
-    }
     static var directory: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("FnPilot/Models", isDirectory: true)
     }
@@ -38,7 +35,7 @@ actor WhisperSpeechRecognizer: SpeechRecognizer {
     func transcribe(_ samples: [Float]) async throws -> String {
         guard let pipe else { throw PilotError("Speech model is not loaded yet.") }
         let audio = try SpeechAudio.prepareForWhisper(samples)
-        let options = Self.decodingOptions
+        let options = DecodingOptions(language: "en", temperature: 0, temperatureFallbackCount: 0, skipSpecialTokens: true, withoutTimestamps: true, suppressBlank: true, concurrentWorkerCount: 1)
         let results: [TranscriptionResult] = try await pipe.transcribe(audioArray: audio, decodeOptions: options)
         let text = results.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { throw PilotError("No speech was recognized.") }
@@ -58,7 +55,6 @@ final class MicrophoneRecorder {
     private var overflow = false
     private var active = false
     private var recordingToken: UUID?
-    private var converter: AVAudioConverter?
     private let maxSamples = 16_000 * 60
     func start() throws {
         guard !active else { return }
@@ -68,7 +64,6 @@ final class MicrophoneRecorder {
         guard format.sampleRate > 0, format.channelCount > 0,
               let output = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 16000, channels: 1, interleaved: false),
               let converter = AVAudioConverter(from: format, to: output) else { throw PilotError("No usable microphone input format.") }
-        self.converter = converter
         let token = UUID()
         lock.lock(); samples = []; conversionFailed = false; overflow = false; recordingToken = token; lock.unlock()
         input.installTap(onBus: 0, bufferSize: 2048, format: format) { [weak self] buffer, _ in
@@ -94,7 +89,6 @@ final class MicrophoneRecorder {
     func stop() throws -> [Float] {
         lock.lock(); recordingToken = nil; lock.unlock()
         if active { engine.stop(); engine.inputNode.removeTap(onBus: 0); active = false }
-        converter = nil
         lock.lock(); defer { samples.removeAll(keepingCapacity: false); lock.unlock() }
         if conversionFailed { throw PilotError("Microphone conversion failed. Check the selected input device.") }
         if overflow { throw PilotError("Recording exceeded 60 seconds. Give a shorter instruction.") }

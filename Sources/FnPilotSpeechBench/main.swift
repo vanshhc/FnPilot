@@ -3,9 +3,8 @@ import CryptoKit
 import WhisperKit
 import FnPilotCore
 
-// Headless evaluation only: never creates AppController or executes a command.
 enum SpeechBenchmark {
-    struct Clip: Codable {
+    struct Clip: Decodable {
         let id: String
         let path: String
         let reference: String
@@ -13,7 +12,7 @@ enum SpeechBenchmark {
         let sha256: String
     }
 
-    struct Measurement: Codable {
+    struct Measurement: Encodable {
         let id: String
         let category: String
         let reference: String
@@ -24,7 +23,7 @@ enum SpeechBenchmark {
         let error: String?
     }
 
-    struct Report: Codable {
+    struct Report: Encodable {
         let model: String
         let manifestSHA256: String
         let decodingOptions: DecodingOptions
@@ -48,13 +47,13 @@ enum SpeechBenchmark {
             }
             return arguments[index + 1]
         }
-        let manifestURL = URL(fileURLWithPath: try value("--speech-benchmark"))
-        let model = try value("--speech-model")
+        let manifestURL = URL(fileURLWithPath: try value("--manifest"))
+        let model = try value("--model")
         guard ["openai_whisper-small.en", "openai_whisper-large-v3_turbo"].contains(model) else {
             throw PilotError("Benchmark model must be openai_whisper-small.en or openai_whisper-large-v3_turbo.")
         }
-        let outputURL = URL(fileURLWithPath: try value("--benchmark-output"))
-        let repetitions = Int(try value("--benchmark-repeats")) ?? 0
+        let outputURL = URL(fileURLWithPath: try value("--output"))
+        let repetitions = Int(try value("--repeats")) ?? 0
         guard (1...10).contains(repetitions) else { throw PilotError("Benchmark repeats must be between 1 and 10.") }
         let manifestData = try Data(contentsOf: manifestURL)
         let manifestSHA256 = SHA256.hash(data: manifestData).map { String(format: "%02x", $0) }.joined()
@@ -72,7 +71,8 @@ enum SpeechBenchmark {
         }
         let audio = try rawAudio.map { padsShortAudio ? try SpeechAudio.prepareForWhisper($0) : $0 }
         guard audio.allSatisfy({ !$0.isEmpty }) else { throw PilotError("Benchmark contains empty audio.") }
-        let base = WhisperSpeechRecognizer.directory
+        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("FnPilot/Models", isDirectory: true)
         let folder = base.appendingPathComponent("models/argmaxinc/whisperkit-coreml/\(model)")
         let tokenizer = model == "openai_whisper-small.en" ? "whisper-small.en" : "whisper-large-v3"
         for file in ["tokenizer.json", "tokenizer_config.json", "config.json"] {
@@ -83,7 +83,7 @@ enum SpeechBenchmark {
         let loadStart = ProcessInfo.processInfo.systemUptime
         let pipe = try await WhisperKit(WhisperKitConfig(modelFolder: folder.path, tokenizerFolder: base, verbose: false, prewarm: false, load: true, download: false))
         let loadSeconds = ProcessInfo.processInfo.systemUptime - loadStart
-        let options = WhisperSpeechRecognizer.decodingOptions
+        let options = DecodingOptions(language: "en", temperature: 0, temperatureFallbackCount: 0, skipSpecialTokens: true, withoutTimestamps: true, suppressBlank: true, concurrentWorkerCount: 1)
         let initialThermalState = ProcessInfo.processInfo.thermalState.rawValue
         let firstStart = ProcessInfo.processInfo.systemUptime
         _ = try await pipe.transcribe(audioArray: audio[0], decodeOptions: options)
@@ -91,8 +91,9 @@ enum SpeechBenchmark {
         // Two additional warm-ups avoid conflating Core ML specialization with steady state.
         for _ in 0..<2 { _ = try await pipe.transcribe(audioArray: audio[0], decodeOptions: options) }
         var measurements: [Measurement] = []
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         for repetition in 0..<repetitions {
-            // Rotate order across passes so each clip is not always measured at the same point.
             for offset in clips.indices {
                 try Task.checkCancellation()
                 let index = (offset + repetition * 17) % clips.count
@@ -115,11 +116,21 @@ enum SpeechBenchmark {
                     padsShortAudio: padsShortAudio,
                     modelLoadSeconds: loadSeconds, firstDecodeSeconds: firstSeconds, warmupDecodes: 3,
                     repetitions: repetitions, measurements: measurements)
-                let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
                 try encoder.encode(report).write(to: outputURL, options: .atomic)
                 print("\(model) pass \(repetition + 1)/\(repetitions) clip \(offset + 1)/\(clips.count): \(String(format: "%.3f", elapsed))s")
                 fflush(stdout)
             }
         }
     }
+}
+
+if CommandLine.arguments.contains("--help") {
+    print("Usage: fnpilot-speech-bench --manifest MANIFEST --model VARIANT --output REPORT --repeats 3 [--pad-short-audio]")
+    print("Requires local models; never executes desktop actions. Models: openai_whisper-small.en, openai_whisper-large-v3_turbo.")
+} else {
+    Task {
+        do { try await SpeechBenchmark.run(arguments: CommandLine.arguments); exit(0) }
+        catch { fputs("\(error.localizedDescription)\n", stderr); exit(1) }
+    }
+    RunLoop.main.run()
 }
