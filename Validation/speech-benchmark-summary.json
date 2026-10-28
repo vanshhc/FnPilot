@@ -1,0 +1,315 @@
+{
+  "date": "2026-10-28",
+  "hardware": {
+    "model": "MacBook Air",
+    "chip": "Apple M4",
+    "memoryGB": 16
+  },
+  "whisperKitVersion": "0.9.4",
+  "modelRepository": "argmaxinc/whisperkit-coreml",
+  "turboModelRevision": "0f63a7800b00dd0226abd051b906c246e1907482",
+  "uniqueClips": 72,
+  "humanClips": 24,
+  "humanSpeakers": 12,
+  "generatedCommandClips": 48,
+  "repetitionsPerModel": 3,
+  "network": "Denied by sandbox-exec during all transcription runs",
+  "executedActions": 0,
+  "selectionPolicy": {
+    "maximumCommandMedianRatio": 1.05,
+    "maximumCommandP95Ratio": 1.05,
+    "requiresRecognitionImprovement": true
+  },
+  "selectedModel": "openai_whisper-small.en",
+  "decision": "Keep small.en. Turbo improves read-speech WER but has the same command WER and exceeds the speed limit.",
+  "turboCommandMedianRatio": 4.785101253380485,
+  "turboCommandP95Ratio": 4.569245069641065,
+  "rawModelComparison": {
+    "openai_whisper-small.en": {
+      "loadSeconds": 28.421964874999958,
+      "firstDecodeSeconds": 0.35029662500005543,
+      "groups": {
+        "commands-daniel": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 6,
+          "referenceWords": 129,
+          "wer": 0.046511627906976744,
+          "exactMatchRate": 0.8333333333333334,
+          "failures": 0,
+          "medianSeconds": 0.15535052083328083,
+          "p95Seconds": 0.2083751250002024,
+          "maxSeconds": 0.22161912500018843
+        },
+        "commands-rishi": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 12,
+          "referenceWords": 129,
+          "wer": 0.09302325581395349,
+          "exactMatchRate": 0.75,
+          "failures": 0,
+          "medianSeconds": 0.15103964583340712,
+          "p95Seconds": 0.2317894583331963,
+          "maxSeconds": 0.23847304166656613
+        },
+        "commands-rishi-noise": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 27,
+          "referenceWords": 129,
+          "wer": 0.20930232558139536,
+          "exactMatchRate": 0.5,
+          "failures": 0,
+          "medianSeconds": 0.14365935416662978,
+          "p95Seconds": 0.2785440416664642,
+          "maxSeconds": 0.289013208333472
+        },
+        "commands-samantha": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 18,
+          "referenceWords": 129,
+          "wer": 0.13953488372093023,
+          "exactMatchRate": 0.6666666666666666,
+          "failures": 6,
+          "medianSeconds": 0.15482249999990927,
+          "p95Seconds": 0.23439383333334263,
+          "maxSeconds": 0.2699336250000215
+        },
+        "human": {
+          "measurements": 72,
+          "clips": 24,
+          "wordErrors": 36,
+          "referenceWords": 849,
+          "wer": 0.04240282685512368,
+          "exactMatchRate": 0.7083333333333334,
+          "failures": 0,
+          "medianSeconds": 0.26778560416653363,
+          "p95Seconds": 0.4970607083332652,
+          "maxSeconds": 0.735398666666697
+        },
+        "commands-all": {
+          "measurements": 144,
+          "clips": 48,
+          "wordErrors": 63,
+          "referenceWords": 516,
+          "wer": 0.12209302325581395,
+          "exactMatchRate": 0.6875,
+          "failures": 6,
+          "medianSeconds": 0.14910510416666511,
+          "p95Seconds": 0.22305258333335587,
+          "maxSeconds": 0.289013208333472
+        },
+        "all": {
+          "measurements": 216,
+          "clips": 72,
+          "wordErrors": 99,
+          "referenceWords": 1365,
+          "wer": 0.07252747252747253,
+          "exactMatchRate": 0.6944444444444444,
+          "failures": 6,
+          "medianSeconds": 0.16804747916671658,
+          "p95Seconds": 0.4460039583334492,
+          "maxSeconds": 0.735398666666697
+        }
+      }
+    },
+    "openai_whisper-large-v3_turbo": {
+      "loadSeconds": 93.36012837500016,
+      "firstDecodeSeconds": 1.7110060416666784,
+      "groups": {
+        "commands-daniel": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 12,
+          "referenceWords": 129,
+          "wer": 0.09302325581395349,
+          "exactMatchRate": 0.75,
+          "failures": 0,
+          "medianSeconds": 0.7259525208332889,
+          "p95Seconds": 0.9361265833331345,
+          "maxSeconds": 1.107653083333389
+        },
+        "commands-rishi": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 9,
+          "referenceWords": 129,
+          "wer": 0.06976744186046512,
+          "exactMatchRate": 0.8333333333333334,
+          "failures": 0,
+          "medianSeconds": 0.7005381875000012,
+          "p95Seconds": 0.9561321666667482,
+          "maxSeconds": 1.5030576666667912
+        },
+        "commands-rishi-noise": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 18,
+          "referenceWords": 129,
+          "wer": 0.13953488372093023,
+          "exactMatchRate": 0.75,
+          "failures": 0,
+          "medianSeconds": 0.7124206458333902,
+          "p95Seconds": 1.0191819166666392,
+          "maxSeconds": 1.4732605416666047
+        },
+        "commands-samantha": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 24,
+          "referenceWords": 129,
+          "wer": 0.18604651162790697,
+          "exactMatchRate": 0.5833333333333334,
+          "failures": 6,
+          "medianSeconds": 0.7327313333333905,
+          "p95Seconds": 1.104724833333421,
+          "maxSeconds": 1.5822941666665429
+        },
+        "human": {
+          "measurements": 72,
+          "clips": 24,
+          "wordErrors": 24,
+          "referenceWords": 849,
+          "wer": 0.028268551236749116,
+          "exactMatchRate": 0.7916666666666666,
+          "failures": 0,
+          "medianSeconds": 1.3051087499999312,
+          "p95Seconds": 2.4631540000000314,
+          "maxSeconds": 3.075025000000096
+        },
+        "commands-all": {
+          "measurements": 144,
+          "clips": 48,
+          "wordErrors": 63,
+          "referenceWords": 516,
+          "wer": 0.12209302325581395,
+          "exactMatchRate": 0.7291666666666666,
+          "failures": 6,
+          "medianSeconds": 0.7134830208333369,
+          "p95Seconds": 1.0191819166666392,
+          "maxSeconds": 1.5822941666665429
+        },
+        "all": {
+          "measurements": 216,
+          "clips": 72,
+          "wordErrors": 87,
+          "referenceWords": 1365,
+          "wer": 0.06373626373626373,
+          "exactMatchRate": 0.75,
+          "failures": 6,
+          "medianSeconds": 0.7702961458332993,
+          "p95Seconds": 1.993543499999987,
+          "maxSeconds": 3.075025000000096
+        }
+      }
+    }
+  },
+  "selectedModelWithShortAudioFix": {
+    "openai_whisper-small.en": {
+      "loadSeconds": 0.2916887499998211,
+      "firstDecodeSeconds": 0.22342474999982187,
+      "groups": {
+        "commands-daniel": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 6,
+          "referenceWords": 129,
+          "wer": 0.046511627906976744,
+          "exactMatchRate": 0.8333333333333334,
+          "failures": 0,
+          "medianSeconds": 0.13833633333331363,
+          "p95Seconds": 0.19768008333335274,
+          "maxSeconds": 0.1984568750001472
+        },
+        "commands-rishi": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 12,
+          "referenceWords": 129,
+          "wer": 0.09302325581395349,
+          "exactMatchRate": 0.75,
+          "failures": 0,
+          "medianSeconds": 0.13814600000011978,
+          "p95Seconds": 0.20332195833339028,
+          "maxSeconds": 0.21095620833352768
+        },
+        "commands-rishi-noise": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 27,
+          "referenceWords": 129,
+          "wer": 0.20930232558139536,
+          "exactMatchRate": 0.5,
+          "failures": 0,
+          "medianSeconds": 0.13170358333331933,
+          "p95Seconds": 0.2549232500000471,
+          "maxSeconds": 0.25775433333342335
+        },
+        "commands-samantha": {
+          "measurements": 36,
+          "clips": 12,
+          "wordErrors": 6,
+          "referenceWords": 129,
+          "wer": 0.046511627906976744,
+          "exactMatchRate": 0.8333333333333334,
+          "failures": 0,
+          "medianSeconds": 0.1345469166666362,
+          "p95Seconds": 0.19125612500010902,
+          "maxSeconds": 0.19484687499993925
+        },
+        "human": {
+          "measurements": 72,
+          "clips": 24,
+          "wordErrors": 36,
+          "referenceWords": 849,
+          "wer": 0.04240282685512368,
+          "exactMatchRate": 0.7083333333333334,
+          "failures": 0,
+          "medianSeconds": 0.20956139583324784,
+          "p95Seconds": 0.3711905416666923,
+          "maxSeconds": 0.3844643750001069
+        },
+        "commands-all": {
+          "measurements": 144,
+          "clips": 48,
+          "wordErrors": 51,
+          "referenceWords": 516,
+          "wer": 0.09883720930232558,
+          "exactMatchRate": 0.7291666666666666,
+          "failures": 0,
+          "medianSeconds": 0.13517608333336284,
+          "p95Seconds": 0.1984568750001472,
+          "maxSeconds": 0.25775433333342335
+        },
+        "all": {
+          "measurements": 216,
+          "clips": 72,
+          "wordErrors": 87,
+          "referenceWords": 1365,
+          "wer": 0.06373626373626373,
+          "exactMatchRate": 0.7222222222222222,
+          "failures": 0,
+          "medianSeconds": 0.1490867083333569,
+          "p95Seconds": 0.3503171249999468,
+          "maxSeconds": 0.3844643750001069
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Public read speech and generated commands, not the user voice or live microphone.",
+    "Repeated decodes measure latency variability; they are not independent accuracy samples.",
+    "Timings exclude capture, resampling, input validation/padding, command interpretation and action execution.",
+    "Full-precision Turbo conversion only; compressed Turbo and other backends were not compared.",
+    "Turbo started at nominal thermal state and ended at fair; the subsequent small.en runs started and ended at fair.",
+    "The initial small.en baseline during downloads is not used for the selection."
+  ],
+  "review": {
+    "scope": "Own changed files only; unrelated committed audit work was not reviewed or modified.",
+    "simplification": "Sequential reuse, quality, efficiency, test-value and comment review; no changes needed.",
+    "correctness": "Targeted manual review; short-audio tests failed before padding and passed after.",
+    "tests": "51 Swift tests passed; scorer arithmetic and incomplete-report rejection checked."
+  }
+}

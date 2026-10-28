@@ -9,6 +9,9 @@ protocol SpeechRecognizer {
 
 actor WhisperSpeechRecognizer: SpeechRecognizer {
     private var pipe: WhisperKit?
+    static var decodingOptions: DecodingOptions {
+        DecodingOptions(language: "en", temperature: 0, temperatureFallbackCount: 0, skipSpecialTokens: true, withoutTimestamps: true, suppressBlank: true, concurrentWorkerCount: 1)
+    }
     static var directory: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("FnPilot/Models", isDirectory: true)
     }
@@ -34,11 +37,9 @@ actor WhisperSpeechRecognizer: SpeechRecognizer {
     }
     func transcribe(_ samples: [Float]) async throws -> String {
         guard let pipe else { throw PilotError("Speech model is not loaded yet.") }
-        guard samples.count >= 1600 else { throw PilotError("Hold Fn while speaking, then release it.") }
-        let rms = sqrt(samples.reduce(Float(0)) { $0 + $1 * $1 } / Float(samples.count))
-        guard rms > 0.002 else { throw PilotError("No speech was detected.") }
-        let options = DecodingOptions(language: "en", temperature: 0, temperatureFallbackCount: 0, skipSpecialTokens: true, withoutTimestamps: true, suppressBlank: true, concurrentWorkerCount: 1)
-        let results: [TranscriptionResult] = try await pipe.transcribe(audioArray: samples, decodeOptions: options)
+        let audio = try SpeechAudio.prepareForWhisper(samples)
+        let options = Self.decodingOptions
+        let results: [TranscriptionResult] = try await pipe.transcribe(audioArray: audio, decodeOptions: options)
         let text = results.map(\.text).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { throw PilotError("No speech was recognized.") }
         return text

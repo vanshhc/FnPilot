@@ -74,3 +74,40 @@ The user completed migration of Accessibility and Input Monitoring, then approve
 A sequential in-thread correctness/reliability/security review was performed under the supplied AGENTS tool mapping. No independent reviewer or external code-review provider was used. Fixes included invalid action-field rejection, unrelated-tool rejection, cancellation generation checks, stale-control/PID/signature validation, Unicode typing focus checks, per-recording buffer tokens, explicit partial-plan rejection, bounded context/actions, window resize sequencing, and a case-insensitive product-name collision between the app and CLI.
 
 Known limits remain explicit: Accessibility availability varies by app; exact control labels are needed for the direct UI router; output devices may not expose system volume; brightness uses an availability-checked private DisplayServices API; external-monitor brightness and screenshots are unsupported. Native save dialogs are preserved. No model is qualified by this release, and there is no automatic cloud or larger-model fallback.
+
+## Speech model comparison — 2026-10-28
+
+The local comparison on an **M4 MacBook Air, 16 GB RAM**, retains **Whisper small.en**. The full `openai_whisper-large-v3_turbo` Core ML conversion did not meet the requirement to improve recognition while preserving speed.
+
+| Metric | small.en | large-v3-turbo |
+|---|---:|---:|
+| Short-command median transcription | 149 ms | 713 ms |
+| Short-command 95th percentile | 223 ms | 1,019 ms |
+| Command word-error rate | 12.21% | 12.21% |
+| Normalized exact command transcript | 68.75% | 72.92% |
+| Human read-speech word-error rate | 4.24% | 2.83% |
+
+The selection rule was set before comparison: Turbo must improve recognition, and both median and 95th-percentile command latency must remain within 5% of small.en. Turbo took **4.79 times** as long at the median and **4.57 times** at the 95th percentile. It improved read-speech accuracy and some noisy commands, but regressed some other commands. No cloud service or model fallback was enabled, and the app's selected model remains small.en.
+
+### Method and evidence
+
+- **72 unique clips:** 24 public human read-speech clips from 12 LibriSpeech speakers, plus 12 Mac command phrases spoken by each of macOS Samantha, Daniel, and Rishi, plus a deterministic 12 dB white-noise version of Rishi's 12 commands.
+- Dataset: `argmaxinc/whisperkit-test-data`, revision `df439ffa58323ef5d36d3f4caa3dd26708d834bd`. Audio comes from its `librispeech` directory; references and deterministic speaker selection use its `librispeech-10mins/metadata.json`.
+- Turbo weights: `argmaxinc/whisperkit-coreml`, revision `0f63a7800b00dd0226abd051b906c246e1907482`, full `openai_whisper-large-v3_turbo` directory. Downloads were size-checked and LFS files SHA-256-checked. Compressed Turbo variants were not tested.
+- Release build; WhisperKit **0.9.4**; default Core ML compute configuration; identical English decoding options, temperature zero, no fallback, one worker. Models run sequentially in separate processes. Each model receives three warm-up decodes, then three passes over the same audio, rotating clip order between passes. Repeat measurements are not independent accuracy samples.
+- Word-error rate is corpus-level Levenshtein word edits divided by reference word count. Case and punctuation are ignored; apostrophes are removed within contractions. Exact match uses that same normalization. Empty results count as deletions and failures. No reference text or vocabulary hints are supplied to the decoder.
+- All inference runs had networking denied by `sandbox-exec`. No microphone recording or desktop actions occurred. Timing covers decoding and text joining, excluding file loading/resampling, input validation/padding, and command interpretation/execution.
+- Turbo started at nominal thermal state and ended at fair; the following small.en runs started and ended at fair. Command median times for Turbo's individual passes were 726, 691, and 720 ms. The decision uses the post-download small.en run, not an earlier baseline made while Turbo was downloading.
+- Model loading and first decode are separate fields in the raw reports. They include device specialization/cache effects and must not be treated as ordinary command latency. The measured load times were 28.4 seconds for the comparison small.en process and 93.4 seconds for Turbo's first load; first decode took 0.35 and 1.71 seconds respectively.
+
+Full evidence is in `Validation/speech-small-en.json`, `Validation/speech-large-v3-turbo.json`, `Validation/speech-benchmark-summary.json`, and the manifest/provenance JSON files. The corpus audio stays in the ignored `.build/speech-benchmark/corpus` folder. Regenerating synthetic speech after a macOS voice update may produce different hashes. These results do not measure the user's voice, live microphone capture, or end-to-end action accuracy.
+
+### Short-recording fix
+
+Two generated commands shorter than one second returned empty transcripts with **both** models. WhisperKit 0.9.4's `TranscribeTask` uses `while seek < seekClipEnd - 16000`; at 16 kHz, that skips the entire decode loop for recordings at or below one second. FnPilot previously accepted recordings down to 100 ms, then passed them unchanged into that loop.
+
+`SpeechAudio.prepareForWhisper` now validates the original duration and RMS, then adds trailing zeros up to 16,001 samples only when needed. Longer audio is unchanged. Four regression tests cover brief speech, exactly one second, longer speech, and rejected silence/accidental taps. The two padding tests failed before the fix and passed afterward. Both originally empty clips then transcribed correctly through the actual small.en model.
+
+The complete 72-clip, three-pass rerun with the fix is in `Validation/speech-small-en-padded.json`: **zero empty results**, command word-error rate **9.88%**, normalized exact command transcripts **72.92%**, median command transcription **135 ms**, and 95th percentile **198 ms**. This verifies the boundary fix, not a model accuracy upgrade. Timing variation between runs does not establish a speedup; already-supported audio follows the same decoding path.
+
+All **51 Swift tests** pass, including the four speech tests and the previously committed audit tests. The scoring script was checked against known edit-distance cases, missing/null error fields, and incomplete-report rejection. Sequential simplification review found no changes needed in the audio fix; targeted manual correctness review covered only this task's changed files. No independent subagent review was used.

@@ -45,8 +45,15 @@ final class PilotDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationWillTerminate(_ notification: Notification) { controller.shutdown() }
 }
 
-if CommandLine.arguments.contains("--help") {
+if CommandLine.arguments.contains("--speech-benchmark") {
+    Task {
+        do { try await SpeechBenchmark.run(arguments: CommandLine.arguments); exit(0) }
+        catch { fputs("\(error.localizedDescription)\n", stderr); exit(1) }
+    }
+    RunLoop.main.run()
+} else if CommandLine.arguments.contains("--help") {
     print("FnPilot headless modes: --diagnostics | --prepare-speech | --transcribe AUDIO_FILE. Use fnpilot-cli for command parsing. These modes do not open the GUI.")
+    print("Speech benchmark: --speech-benchmark MANIFEST --speech-model VARIANT --benchmark-output REPORT --benchmark-repeats 3. Requires local model files; never executes actions.")
 } else if CommandLine.arguments.contains("--diagnostics") {
     print("Accessibility: \(AXIsProcessTrusted())")
     print("Input Monitoring: \(CGPreflightListenEventAccess())")

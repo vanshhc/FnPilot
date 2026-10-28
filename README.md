@@ -118,3 +118,25 @@ swift run fnpilot-bench MODEL_ID Resources/commands100.json report.json \
 ```
 
 Results report model-only and parser-first accuracy separately. Parser-first runs use the desktop's sequence splitting, routing, and action checks with a simulated executor. Fixtures describe the initial app only: switching to another app clears its controls rather than reusing stale targets. These scores do not verify desktop execution or controls discovered after launch. See `VALIDATION.md` for hardware, measurements, methodology, and remaining verification limits. Previously saved benchmark results predate this shared routing.
+
+### Speech model benchmark
+
+The M4 comparison retains **Whisper small.en**: the full large-v3-turbo Core ML model improved public read-speech accuracy but took about 4.8 times as long on short commands. See `VALIDATION.md` and `Validation/speech-benchmark-summary.json` for the results and limits. Brief recordings are now padded past WhisperKit 0.9.4's one-second decode boundary; speech is validated before padding.
+
+Prepare the public and generated corpus, then install Turbo without changing the app's selected model. Install small.en through Settings first.
+
+```sh
+python3 scripts/benchmark-speech.py prepare .build/speech-benchmark/corpus
+python3 scripts/download-whisper-turbo.py
+swift build -c release --product FnPilot --jobs 2
+sandbox-exec -p '(version 1)(allow default)(deny network*)' \
+  .build/release/FnPilot \
+  --speech-benchmark .build/speech-benchmark/corpus/manifest.json \
+  --speech-model openai_whisper-small.en \
+  --benchmark-output .build/speech-benchmark/small.json \
+  --benchmark-repeats 3 --pad-short-audio
+```
+
+Repeat with `--speech-model openai_whisper-large-v3_turbo` and a separate output file, then score both reports with `python3 scripts/benchmark-speech.py summarize SMALL_REPORT TURBO_REPORT`. Use identical padding settings for both models. Omitting `--pad-short-audio` reproduces the original, unpadded pipeline used for the archived model comparison. The benchmark checks audio hashes, warms each model three times, measures sequential decoding with the app's options, and never executes actions. Loading, first-decode time, and thermal state are recorded separately. Transcription timing excludes file loading, resampling, input validation/padding, and command interpretation/execution.
+
+Corpus audio stays under the ignored `.build` directory. The checked-in manifest records its hashes; macOS voice updates can change regenerated synthetic audio. These clips do not measure your voice or microphone capture accuracy.
