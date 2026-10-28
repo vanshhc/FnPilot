@@ -50,6 +50,11 @@ final class AppController: ObservableObject {
     init() {
         let initial = ManagedRuntime.binary == nil ? ModelConfiguration() : ModelConfiguration(runtime: .openAICompatible, endpoint: ManagedRuntime.endpoint, outputMode: .toolCalls)
         configuration = UserDefaults.standard.data(forKey: "modelConfiguration").flatMap { try? JSONDecoder().decode(ModelConfiguration.self, from: $0) } ?? initial
+        managedRuntime.onStateChange = { [weak self] message in
+            guard let self else { return }
+            self.serverRunning = self.managedRuntime.running
+            if let message { self.diagnostic = message }
+        }
         executor.refreshApps()
         lastExternalTarget = NSWorkspace.shared.frontmostApplication
         workspaceObserver = NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification, object: nil, queue: .main) { [weak self] notification in
@@ -158,7 +163,7 @@ final class AppController: ObservableObject {
                 replyContext = pending.message
             }
         }
-        var total = 0
+        let runner = CommandRunner()
         var outcomes: [ActionOutcome] = []
         do {
             while !parts.isEmpty {
@@ -166,14 +171,14 @@ final class AppController: ObservableObject {
                 let part = parts.removeFirst()
                 phase = "Understanding"; status = "Interpreting locally…"
                 let direct = replyContext == nil ? DirectParser().parse(part) : nil
-                var context = direct == nil ? executor.context(for: target, clarification: replyContext) : CommandContext(appName: target?.localizedName ?? "", bundleID: target?.bundleIdentifier ?? "")
+                let context = direct == nil ? executor.context(for: target, clarification: replyContext) : CommandContext(appName: target?.localizedName ?? "", bundleID: target?.bundleIdentifier ?? "")
                 let result: Interpretation
                 if let answer = resolvedReply { result = answer; resolvedReply = nil }
-                else if let direct { result = direct }
-                else if replyContext == nil, let namedControl = DirectUIParser().parse(part, context: context) { result = namedControl }
                 else {
-                    guard allowModelActions else { throw PilotError("Model fallback is off because the tested small models did not meet the accuracy target. Use an explicit command or an exact control label. You can opt into experimental model actions in Settings.") }
-                    result = try await LocalModelInterpreter(configuration: configuration).interpret(part, context: context)
+                    result = try await runner.interpret(part, context: context) { part, context in
+                        guard self.allowModelActions else { throw PilotError("Model fallback is off. Use an explicit command or an exact control label, or enable experimental model actions in Settings.") }
+                        return try await LocalModelInterpreter(configuration: self.configuration).interpret(part, context: context)
+                    }
                 }
                 try Task.checkCancellation(); try ActionRegistry.validate(result)
                 if result.status == "clarify" {
@@ -183,17 +188,10 @@ final class AppController: ObservableObject {
                 }
                 if result.status == "unsupported" { throw PilotError(result.message ?? "That action is not supported.") }
                 replyContext = nil
-                for action in result.actions {
-                    try Task.checkCancellation()
-                    total += 1
-                    guard total <= 20 else { throw PilotError("Stopped after 20 actions. Give a shorter instruction.") }
-                    phase = "Acting"; status = action.kind.replacingOccurrences(of: "_", with: " ")
-                    // A freshly observed tree must still contain any control returned by the interpreter.
-                    if let controlID = action.controlID, !context.controls.contains(where: { $0.id == controlID }) { throw PilotError("The model selected a control that is not currently available.") }
-                    let outcome = try await executor.execute(action, target: &target)
+                try await runner.execute(result, observed: context, context: { self.executor.context(for: target) }) { action in
+                    self.phase = "Acting"; self.status = action.kind.replacingOccurrences(of: "_", with: " ")
+                    let outcome = try await self.executor.execute(action, target: &target)
                     outcomes.append(outcome)
-                    try Task.checkCancellation()
-                    if result.actions.contains(where: { $0.controlID != nil }) { context = executor.context(for: target).compacted(for: part) }
                 }
             }
             phase = outcomes.allSatisfy(\.verified) ? "Done" : "Action sent"

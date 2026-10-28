@@ -53,6 +53,7 @@ func normalized(_ result: Interpretation, apps: [AppInfo], expected: Interpretat
     return result
 }
 
+@MainActor
 func run() async throws {
     let args = CommandLine.arguments
     guard args.count >= 4 else {
@@ -74,9 +75,29 @@ func run() async throws {
         catch let caught { error = caught.localizedDescription }
         let seconds = Date().timeIntervalSince(start)
         let direct = DirectParser().parse(example.input) ?? DirectUIParser().parse(example.input, context: example.context)
+        let runner = CommandRunner()
+        var hybrid = Interpretation()
+        var hybridFailed = false
+        var current = example.context
+        do {
+            for part in CommandSequence.parts(example.input) {
+                let step = try await runner.interpret(part, context: current) { text, context in
+                    try await interpreter.interpret(text, context: context)
+                }
+                if step.status != "actions" { hybrid = step; break }
+                try await runner.execute(step, observed: current, context: { current }) { action in
+                    // Fixtures describe only the initial app; never reuse its controls for a new target.
+                    if let name = action.app, let app = current.apps.first(where: { $0.name.caseInsensitiveCompare(name) == .orderedSame || $0.bundleID == name }), app.bundleID != current.bundleID {
+                        current.appName = app.name; current.bundleID = app.bundleID
+                        current.controls = []; current.controlsComplete = false
+                    }
+                    hybrid.actions.append(action)
+                }
+            }
+        } catch { hybridFailed = true }
         let wanted = normalized(example.expected, apps: example.context.apps)
         let correct = result.map { normalized($0, apps: example.context.apps, expected: wanted, activeID: example.context.bundleID) == wanted } ?? false
-        let hybridCorrect = (direct ?? result).map { normalized($0, apps: example.context.apps, expected: wanted, activeID: example.context.bundleID) == wanted } ?? false
+        let hybridCorrect = !hybridFailed && normalized(hybrid, apps: example.context.apps, expected: wanted, activeID: example.context.bundleID) == wanted
         results.append(Measurement(id: example.id, category: example.category, input: example.input, expected: example.expected, actual: result, correct: correct, hybridCorrect: hybridCorrect, direct: direct != nil, seconds: seconds, error: error))
         print("\(example.id) \(correct ? "PASS" : "FAIL") hybrid=\(hybridCorrect) \(String(format: "%.3f", seconds))s \(example.input)\(error.map { " [\($0)]" } ?? "")")
         fflush(stdout)

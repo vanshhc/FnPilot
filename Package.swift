@@ -16,6 +16,7 @@ let package = Package(
         .executableTarget(name: "FnPilotApp", dependencies: ["FnPilotCore", .product(name: "WhisperKit", package: "WhisperKit")]),
         .executableTarget(name: "FnPilotBench", dependencies: ["FnPilotCore"]),
         .executableTarget(name: "FnPilotCLI", dependencies: ["FnPilotCore"]),
-        .testTarget(name: "FnPilotCoreTests", dependencies: ["FnPilotCore"])
+        .testTarget(name: "FnPilotCoreTests", dependencies: ["FnPilotCore"]),
+        .testTarget(name: "FnPilotAppTests", dependencies: ["FnPilotApp"])
     ]
 )

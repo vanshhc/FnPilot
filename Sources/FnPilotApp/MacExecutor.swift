@@ -10,9 +10,11 @@ struct ActionOutcome {
 
 @MainActor
 final class MacExecutor {
+    var readAttribute: ((AXUIElement, String) -> CFTypeRef?)?
     private(set) var apps: [AppInfo] = []
     private var appURLs: [String: URL] = [:]
     private var elements: [String: AXUIElement] = [:]
+    private var controlsAreComplete = true
     private var signatures: [String: String] = [:]
     private var savedFrames: [CFHashCode: CGRect] = [:]
     private var chosenWindows: [pid_t: AXUIElement] = [:]
@@ -36,6 +38,7 @@ final class MacExecutor {
     func context(for target: NSRunningApplication?, clarification: String? = nil) -> CommandContext {
         elements.removeAll(); signatures.removeAll()
         var controls: [UIControl] = []
+        var complete = true
         if AXIsProcessTrusted(), let target {
             let app = AXUIElementCreateApplication(target.processIdentifier)
             AXUIElementSetMessagingTimeout(app, 0.3)
@@ -43,14 +46,17 @@ final class MacExecutor {
             if target.bundleIdentifier == "com.google.Chrome" { _ = AXUIElementSetAttributeValue(app, "AXManualAccessibility" as CFString, kCFBooleanTrue) }
             let roots = [window(for: target), element(app, kAXMenuBarAttribute)].compactMap { $0 }
             var visited = Set<CFHashCode>()
-            for root in roots { scan(root, depth: 0, visited: &visited, controls: &controls) }
+            for root in roots { scan(root, depth: 0, visited: &visited, controls: &controls, complete: &complete) }
         }
-        return CommandContext(appName: target?.localizedName ?? "", bundleID: target?.bundleIdentifier ?? "", apps: apps, controls: controls, clarification: clarification)
+        controlsAreComplete = complete
+        return CommandContext(appName: target?.localizedName ?? "", bundleID: target?.bundleIdentifier ?? "", apps: apps, controls: controls, controlsComplete: complete, clarification: clarification)
     }
 
-    private func scan(_ node: AXUIElement, depth: Int, visited: inout Set<CFHashCode>, controls: inout [UIControl]) {
+    func scan(_ node: AXUIElement, depth: Int, visited: inout Set<CFHashCode>, controls: inout [UIControl], complete: inout Bool) {
         let hash = CFHash(node)
-        guard depth < 14, visited.count < 700, controls.count < 90, visited.insert(hash).inserted else { return }
+        guard !visited.contains(hash) else { return }
+        guard depth < 14, visited.count < 700, controls.count < 90 else { complete = false; return }
+        visited.insert(hash)
         let role = string(node, kAXRoleAttribute)
         if string(node, kAXSubroleAttribute) == (kAXSecureTextFieldSubrole as String) { return }
         let label = [string(node, kAXTitleAttribute), string(node, kAXDescriptionAttribute), string(node, kAXHelpAttribute)].first { !$0.isEmpty } ?? ""
@@ -63,7 +69,7 @@ final class MacExecutor {
             let exposedRole = ["AXCloseButton", "AXMinimizeButton", "AXFullScreenButton", "AXZoomButton"].contains(subrole) ? subrole : role
             controls.append(UIControl(id: id, role: exposedRole, label: String(label.prefix(140)), value: value))
         }
-        for child in children(node) { scan(child, depth: depth + 1, visited: &visited, controls: &controls) }
+        for child in children(node) { scan(child, depth: depth + 1, visited: &visited, controls: &controls, complete: &complete) }
     }
 
     func execute(_ action: Action, target: inout NSRunningApplication?) async throws -> ActionOutcome {
@@ -95,6 +101,7 @@ final class MacExecutor {
         }
         guard AXIsProcessTrusted() else { throw PilotError("Enable FnPilot in System Settings → Privacy & Security → Accessibility, then retry.") }
         if ["press_control", "set_control_value"].contains(action.kind) {
+            guard controlsAreComplete else { throw PilotError("The control scan is incomplete. Narrow the target window and retry.") }
             guard let id = action.controlID, let node = elements[id], let signature = signatures[id] else { throw PilotError("That control is no longer visible. Hold Fn and try again.") }
             var pid: pid_t = 0
             guard AXUIElementGetPid(node, &pid) == .success, pid == current.processIdentifier else { throw PilotError("The control belongs to a different app. Nothing was pressed.") }
@@ -158,7 +165,7 @@ final class MacExecutor {
             event.post(tap: .cghidEventTap)
             return ActionOutcome(message: "Scrolled \(direction)", verified: false)
         }
-        guard let win = window(for: current) else { throw PilotError("No window is available in \(current.localizedName ?? "the target app").") }
+        guard let win = window(for: current, restoring: action.kind == "restore_window") else { throw PilotError("No window is available in \(current.localizedName ?? "the target app").") }
         switch action.kind {
         case "close_window":
             guard let button = element(win, kAXCloseButtonAttribute) else { throw PilotError("This window has no accessible close button.") }
@@ -166,7 +173,9 @@ final class MacExecutor {
             try await Task.sleep(nanoseconds: 150_000_000)
             let stillThere = (attribute(AXUIElementCreateApplication(current.processIdentifier), kAXWindowsAttribute) as? [AXUIElement] ?? []).contains { CFEqual($0, win) }
             return ActionOutcome(message: stillThere ? "Close requested; check for an app dialog" : "Closed window", verified: !stillThere)
-        case "minimize_window": try set(win, kAXMinimizedAttribute, kCFBooleanTrue)
+        case "minimize_window":
+            try set(win, kAXMinimizedAttribute, kCFBooleanTrue)
+            chosenWindows[current.processIdentifier] = win
         case "restore_window":
             try set(win, kAXMinimizedAttribute, kCFBooleanFalse)
             if number(win, "AXFullScreen")?.boolValue == true { try set(win, "AXFullScreen", kCFBooleanFalse) }
@@ -220,6 +229,7 @@ final class MacExecutor {
 
     private func video(_ action: Action, _ app: NSRunningApplication) async throws -> ActionOutcome {
         let context = context(for: app)
+        guard context.controlsComplete != false else { throw PilotError("The control scan is incomplete. Narrow the target window and retry.") }
         func matching(_ pattern: String) -> [UIControl] {
             context.controls.filter { ["AXButton", "AXMenuItem"].contains($0.role) && $0.label.range(of: pattern, options: [.regularExpression, .caseInsensitive]) != nil }
         }
@@ -295,15 +305,16 @@ final class MacExecutor {
         return ActionOutcome(message: "Brightness \(Int(value * 100))%", verified: get(id, &actual) == 0 && abs(actual - value) < 0.03)
     }
 
-    func window(for app: NSRunningApplication) -> AXUIElement? {
+    func window(for app: NSRunningApplication, restoring: Bool = false) -> AXUIElement? {
         let ax = AXUIElementCreateApplication(app.processIdentifier)
         let windows = attribute(ax, kAXWindowsAttribute) as? [AXUIElement] ?? []
-        if let cached = chosenWindows[app.processIdentifier], windows.contains(where: { CFEqual($0, cached) }), number(cached, kAXMinimizedAttribute)?.boolValue == true { return cached }
+        if restoring, let cached = chosenWindows[app.processIdentifier], windows.contains(where: { CFEqual($0, cached) }), number(cached, kAXMinimizedAttribute)?.boolValue == true { return cached }
         let selected = element(ax, kAXFocusedWindowAttribute) ?? windows.first
-        if let selected { chosenWindows[app.processIdentifier] = selected }
+        if restoring, let selected { chosenWindows[app.processIdentifier] = selected }
         return selected
     }
     private func attribute(_ node: AXUIElement, _ key: String) -> CFTypeRef? {
+        if let readAttribute { return readAttribute(node, key) }
         var value: CFTypeRef?
         return AXUIElementCopyAttributeValue(node, key as CFString, &value) == .success ? value : nil
     }

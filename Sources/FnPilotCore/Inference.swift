@@ -27,9 +27,10 @@ public struct CommandContext: Codable, Sendable {
     public var bundleID: String
     public var apps: [AppInfo]
     public var controls: [UIControl]
+    public var controlsComplete: Bool?
     public var clarification: String?
-    public init(appName: String = "", bundleID: String = "", apps: [AppInfo] = [], controls: [UIControl] = [], clarification: String? = nil) {
-        self.appName = appName; self.bundleID = bundleID; self.apps = apps; self.controls = controls; self.clarification = clarification
+    public init(appName: String = "", bundleID: String = "", apps: [AppInfo] = [], controls: [UIControl] = [], controlsComplete: Bool? = nil, clarification: String? = nil) {
+        self.appName = appName; self.bundleID = bundleID; self.apps = apps; self.controls = controls; self.controlsComplete = controlsComplete; self.clarification = clarification
     }
 }
 
