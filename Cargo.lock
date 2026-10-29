@@ -1125,7 +1125,6 @@ version = "0.2.0"
 dependencies = [
  "fnpilot-core",
  "fnpilot-runtime",
- "serde",
  "serde_json",
 ]
 
@@ -1171,7 +1170,6 @@ dependencies = [
  "objc2",
  "objc2-foundation",
  "png",
- "serde",
  "serde_json",
  "windows 0.62.2",
  "winreg 0.55.0",
@@ -1196,7 +1194,6 @@ version = "0.2.0"
 dependencies = [
  "fnpilot-core",
  "serde",
- "serde_json",
  "sha2",
  "whisper-rs",
 ]

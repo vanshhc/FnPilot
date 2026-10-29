@@ -49,7 +49,7 @@ fn providers_and_formats_produce_identical_validated_actions() {
             } else {
                 json!({"choices":[{"finish_reason":"stop","message":message}]})
             };
-            let result = decode::decode(&config, "set volume to 37", &object).unwrap();
+            let result = decode::decode(&config, &object).unwrap();
             assert_eq!(result.actions[0].value, Some(37.0));
             let mut truncated = object;
             if runtime == Runtime::Ollama {
@@ -57,7 +57,7 @@ fn providers_and_formats_produce_identical_validated_actions() {
             } else {
                 truncated["choices"][0]["finish_reason"] = json!("length");
             }
-            assert!(decode::decode(&config, "set volume to 37", &truncated).is_err());
+            assert!(decode::decode(&config, &truncated).is_err());
             let request = config.request("set volume to 37", &CommandContext::default());
             assert_eq!(request["stream"], false);
             assert_eq!(request.get("options").is_some(), runtime == Runtime::Ollama);
@@ -72,7 +72,7 @@ fn malformed_clarification_arguments_fail_without_panicking() {
         ..Default::default()
     };
     let response = json!({"done":true,"done_reason":"stop","message":{"tool_calls":[{"function":{"name":"clarify","arguments":{"unexpected":"Which?"}}}]}});
-    assert!(decode::decode(&config, "mute", &response).is_err());
+    assert!(decode::decode(&config, &response).is_err());
 }
 
 #[test]
@@ -114,7 +114,7 @@ fn model_tools_and_decoding_do_not_require_command_keywords() {
                 } else {
                     json!({"choices":[{"finish_reason":"tool_calls","message":message}]})
                 };
-                let result = decode::decode(&config, phrase, &response);
+                let result = decode::decode(&config, &response);
                 assert_eq!(result.is_ok(), name != "execute_shell");
             }
         }
@@ -173,9 +173,7 @@ fn browser_group_is_scoped_by_context_in_tools_and_schema_for_both_providers() {
                     } else {
                         json!({"choices":[{"finish_reason":"stop","message":message}]})
                     };
-                    let result =
-                        decode::decode(&config, "take me to example.org in a fresh tab", &response)
-                            .unwrap();
+                    let result = decode::decode(&config, &response).unwrap();
                     assert_eq!(result.actions.len(), 2);
                     assert_eq!(result.actions[1].text.as_deref(), Some("example.org"));
                 }

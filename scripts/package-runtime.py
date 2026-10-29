@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Package an official llama.cpp build as relocatable, signed app resources."""
-import pathlib, shutil, subprocess, sys, os, json, hashlib
+import pathlib, shutil, subprocess, os, json, hashlib
 import argparse
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument("source",type=pathlib.Path)

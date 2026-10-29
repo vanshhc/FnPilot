@@ -236,10 +236,6 @@ pub fn parameters(kind: &str, include_kind: bool) -> Value {
     json!({"type":"object","additionalProperties":false,"properties":properties,"required":required})
 }
 
-pub fn schema() -> Value {
-    schema_for(KINDS)
-}
-
 pub fn schema_for(kinds: &[&str]) -> Value {
     json!({"oneOf":[
         {"type":"object","additionalProperties":false,"required":["status","actions"],"properties":{

@@ -63,15 +63,6 @@ pub fn kinds(input: &str) -> Vec<String> {
     }
     choices.into_iter().map(str::to_owned).collect()
 }
-pub fn tools(input: &str) -> Vec<Value> {
-    tools_for(kinds(input).iter().map(String::as_str))
-}
-
-/// Model intent resolution must not depend on command keywords.
-pub fn model_tools() -> Vec<Value> {
-    tools_for(action::KINDS.iter().copied())
-}
-
 /// Scope app-specific tools by observed capabilities, never by words in the request.
 pub fn model_kinds(context: &crate::context::CommandContext) -> Vec<&'static str> {
     action::KINDS
@@ -88,11 +79,7 @@ pub fn model_kinds(context: &crate::context::CommandContext) -> Vec<&'static str
 }
 
 pub fn model_tools_for(context: &crate::context::CommandContext) -> Vec<Value> {
-    tools_for(model_kinds(context).into_iter())
-}
-
-fn tools_for<'a>(kinds: impl Iterator<Item = &'a str>) -> Vec<Value> {
-    let mut tools: Vec<_> = kinds.map(|kind| json!({"type":"function","function":{"name":kind,"description":kind.replace('_', " "),"parameters":action::parameters(kind, false)}})).collect();
+    let mut tools: Vec<_> = model_kinds(context).into_iter().map(|kind| json!({"type":"function","function":{"name":kind,"description":kind.replace('_', " "),"parameters":action::parameters(kind, false)}})).collect();
     for status in ["clarify", "unsupported"] {
         tools.push(json!({"type":"function","function":{"name":status,"description":status,"parameters":{"type":"object","additionalProperties":false,"required":["message"],"properties":{"message":{"type":"string","minLength":1}}}}}));
     }

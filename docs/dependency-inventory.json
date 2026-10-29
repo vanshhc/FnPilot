@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "cargo_lock_sha256": "641020d53f9092833e18b2945f114c8d05b4b65e682517ac7697944571a2fa32",
+  "cargo_lock_sha256": "4c30aad59ba07e5120e023bf1d28d773db7954b62ef373e2bdcc33902e77a2cb",
   "rust": [
     {
       "name": "adler2",

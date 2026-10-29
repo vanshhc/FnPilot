@@ -105,7 +105,7 @@ impl Interpreter {
     ) -> Result<Interpretation> {
         let reply =
             self.exchange_session(&self.config.request(input, context), false, session, token)?;
-        decode::decode(&self.config, input, &reply)
+        decode::decode(&self.config, &reply)
     }
     fn exchange_session(
         &self,
@@ -276,7 +276,6 @@ impl Interpreter {
         };
         decode::decode(
             &self.config,
-            input,
             &self.post(path, &self.config.request(input, context))?,
         )
     }

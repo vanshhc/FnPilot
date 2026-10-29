@@ -2,7 +2,7 @@ use crate::{Configuration, OutputMode, Runtime};
 use fnpilot_core::{Interpretation, Result, action};
 use serde_json::{Value, json};
 
-pub fn decode(config: &Configuration, _input: &str, object: &Value) -> Result<Interpretation> {
+pub fn decode(config: &Configuration, object: &Value) -> Result<Interpretation> {
     let (message, reason) = if config.runtime == Runtime::Ollama {
         if object["done"] != true {
             return Err("Incomplete model response.".into());
