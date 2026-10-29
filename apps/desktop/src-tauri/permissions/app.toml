@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "app-settings"
+description = "Settings operations; all instruction validation remains in Rust."
+commands.allow = ["snapshot", "submit_instruction", "cancel_session", "set_paused", "read_settings", "write_settings", "diagnose", "preview_legacy_settings", "import_legacy_settings", "configure_autostart", "install_speech_model", "cancel_setup", "start_runtime", "stop_runtime", "check_runtime", "request_microphone", "unload_models", "request_accessibility", "request_screen_recording"]

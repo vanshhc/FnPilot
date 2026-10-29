@@ -1,0 +1,7 @@
+{
+  "productName": "FnPilot",
+  "identifier": "com.fnpilot.desktop",
+  "bundle": {
+    "resources": { "resources/": "./" }
+  }
+}

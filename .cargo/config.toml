@@ -1,0 +1,3 @@
+[target.x86_64-pc-windows-msvc]
+# Keep the CPU speech decoder and Rust host self-contained on clean Windows 11.
+rustflags = ["-C", "target-feature=+crt-static"]

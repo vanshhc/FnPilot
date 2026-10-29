@@ -1,5 +1,7 @@
 # Validation
 
+> Historical evidence for the retired standalone Swift application. Its sources and build/signing/benchmark tools have been removed. Commands and test counts below describe that earlier implementation; use [development.md](docs/development.md) for current Rust/Tauri checks.
+
 FnPilot is a **working preview, not a qualified general-purpose voice agent**. Both required small models missed the 95% command-accuracy threshold. Model-generated actions are off by default. The direct router still handles explicit app/system commands and exact accessible control labels.
 
 ## Automated checks

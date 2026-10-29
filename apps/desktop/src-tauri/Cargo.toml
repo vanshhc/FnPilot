@@ -1,0 +1,30 @@
+[package]
+name = "fnpilot-desktop"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "fnpilot_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "=2.7.4", features = [] }
+
+[dependencies]
+tauri = { version = "=2.12.5", features = ["tray-icon"] }
+tauri-plugin-single-instance = "=2.5.5"
+serde.workspace = true
+serde_json.workspace = true
+fnpilot-core.workspace = true
+fnpilot-platform.workspace = true
+fnpilot-runtime.workspace = true
+fnpilot-speech.workspace = true
+
+[features]
+default = ["speech"]
+speech = ["fnpilot-speech/whisper"]
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "=0.62.2", features = ["Win32_Storage_FileSystem"] }

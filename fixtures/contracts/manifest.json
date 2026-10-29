@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "revision": "b73a603495ccd4c0200b7ad648036a16a803f3c5",
+  "dirty_paths": [
+    " M Package.swift",
+    " M README.md",
+    " M Sources/FnPilotApp/Speech.swift",
+    " D Sources/FnPilotApp/SpeechBenchmark.swift",
+    " M Sources/FnPilotApp/main.swift",
+    "?? Sources/FnPilotSpeechBench/main.swift",
+    "?? docs/plans/2026-10-28-1135-refactor-rust-tauri-oss-migration-plan.md",
+    "?? fixtures/contracts/parser.json",
+    "?? scripts/capture-baseline.py",
+    "?? scripts/tests/test_capture_baseline.py"
+  ],
+  "corpus_sha256": "9e6f21d9bab75aba242e8fb9f59d91bfc242e250a2fc05d9123ad5c461c69909",
+  "parser_sha256": "4145964ac874c410a4ca4e10e04d6197805ce707e7c00baf2c3381cd3f612785",
+  "configuration": {
+    "oracle": "Swift DirectParser + DirectUIParser + CommandSequence + CommandCapabilities",
+    "model": null
+  },
+  "host": {
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "measurement_status": "not_measured",
+  "paired_runs": [],
+  "hardware": null,
+  "native_acceptance": "pending"
+}

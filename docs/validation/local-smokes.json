@@ -1,0 +1,56 @@
+{
+  "schema_version": 3,
+  "verified_on": "2026-10-29",
+  "source_state": "Uncommitted Rust/Tauri migration based on b4b64e41f11e24fd4c3aa934530664f2f12ed57e; development evidence only",
+  "application_binary_sha256": "86398ba5a8de82452c28bb553968cad4cc3c2ca4baa4afe72cab40d47781b363",
+  "application_identity": "com.fnpilot.preview",
+  "official_signature": false,
+  "local_adhoc_signature_verified": false,
+  "local_development_signature_verified": true,
+  "local_signing_user_approved": true,
+  "permissions_retained_after_native_rebuild": true,
+  "rust_tests_passed": 37,
+  "rust_tests_ignored": 1,
+  "mock_ui_tests_passed": 5,
+  "python_tests_passed": 6,
+  "swift_default_tests_passed": 2,
+  "swift_default_tests_skipped": 1,
+  "swift_real_speech_opt_in_passed": true,
+  "rust_to_whisperkit_abi_real_speech_opt_in_passed": true,
+  "speech_smoke_audio": "synthetic Open Calculator WAV; existing local small.en weights and tokenizer; no downloads",
+  "packaged_helper_structured_inference_passed": true,
+  "windows_gnu_platform_runtime_cross_clippy_passed": true,
+  "live_desktop_actions_exercised": true,
+  "models_downloaded_by_smokes": false,
+  "native_ui_smoke": "Selected direct Rust paths pass on unlocked Mac; see macos-e2e.md for scope and remaining qualification",
+  "physical_voice_user_confirmed": true,
+  "live_paths_passed": ["literal_unicode_typing", "app_activation", "minimize", "maximize", "exact_frame_restore", "exact_label_control", "cancel_and_recover", "gui_helper_start_health_stop"],
+  "physical_escape_qualified": false,
+  "prior_ui_evidence": {
+    "application_binary_sha256": "e4beb3ae60cdc26888988e32bccc57b41c6c47738bdb9814755dd33fd8e75c36",
+    "duplicate_launch_host_count": 1,
+    "scope": "Earlier Tauri host with Swift platform bridge; not evidence for the current Rust native port"
+  },
+  "native_windows_acceptance": "pending",
+  "paired_performance_acceptance": "pending",
+  "installed_app_replaced": false,
+  "production_swift_files": [
+    "FnPilotSpeech/SpeechABI.swift",
+    "FnPilotSpeech/WhisperSpeech.swift"
+  ],
+  "production_swift_lines": 92,
+  "retained_swift_benchmark": "Nonexecuting speech qualification only",
+  "swift_abi_operations": [
+    "transcribeWhisperKit",
+    "unloadSpeech"
+  ],
+  "source_audit": {
+    "candidate_files": 223,
+    "historical_blobs": 333,
+    "credential_category_matches": 0,
+    "only_findings": "Scanner absolute-path pattern matched its own source in candidate/history; inspected"
+  },
+  "frozen_corpus_sha256": "9e6f21d9bab75aba242e8fb9f59d91bfc242e250a2fc05d9123ad5c461c69909",
+  "frozen_parser_sha256": "4145964ac874c410a4ca4e10e04d6197805ce707e7c00baf2c3381cd3f612785",
+  "release_qualification": "Pending hardware, signing/install/upgrade and performance acceptance; no publication or official release"
+}
