@@ -23,7 +23,16 @@ New-Item -ItemType Directory -Force -Path $target | Out-Null
 $files = @{}
 Get-ChildItem $bin -File | Where-Object { $_.Name -eq 'llama-server.exe' -or $_.Extension -eq '.dll' } | ForEach-Object {
   Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $target $_.Name) -Force
-  $files[$_.Name] = (Get-FileHash -LiteralPath (Join-Path $target $_.Name) -Algorithm SHA256).Hash.ToLowerInvariant()
+  # Windows PowerShell can inherit PowerShell 7's module search path in CI.
+  # Hash through .NET so staging does not depend on Security module discovery.
+  $stream = [System.IO.File]::OpenRead((Join-Path $target $_.Name))
+  $sha256 = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    $files[$_.Name] = [System.BitConverter]::ToString($sha256.ComputeHash($stream)).Replace('-', '').ToLowerInvariant()
+  } finally {
+    $sha256.Dispose()
+    $stream.Dispose()
+  }
 }
 if (-not $files.ContainsKey('llama-server.exe')) { throw 'Built llama-server.exe missing.' }
 $receipt = @{ revision = $manifest.revision; files = $files } | ConvertTo-Json -Depth 4
