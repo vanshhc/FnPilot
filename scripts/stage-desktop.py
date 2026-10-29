@@ -15,6 +15,17 @@ def run(*args):
     subprocess.run(args, cwd=ROOT, check=True)
 
 
+def node_license_files(directory):
+    """Collect installed package licenses without entering workspace links."""
+    for path in directory.iterdir():
+        if path.is_symlink() or getattr(path, "is_junction", lambda: False)():
+            continue
+        if path.is_dir():
+            yield from node_license_files(path)
+        elif path.name.upper().startswith(("LICENSE", "COPYING", "NOTICE")) and path.is_file():
+            yield path
+
+
 def stage():
     cargo = shutil.which("cargo") or str(Path.home() / ".cargo/bin/cargo")
     if sys.platform == "darwin":
@@ -69,11 +80,10 @@ def stage():
             if path.is_file() and path.name.upper().startswith(("LICENSE", "COPYING", "NOTICE")):
                 target.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(path, target / path.name)
-    for source in (ROOT / "node_modules").rglob("*"):
-        if source.is_file() and source.name.upper().startswith(("LICENSE", "COPYING", "NOTICE")):
-            target = licenses / "node" / source.relative_to(ROOT / "node_modules")
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, target)
+    for source in node_license_files(ROOT / "node_modules"):
+        target = licenses / "node" / source.relative_to(ROOT / "node_modules")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
     for source in [ROOT / ".build-runtime/source", ROOT / ".build-runtime-windows/source", ROOT / "native/macos/.build/offline-whisperkit", ROOT / "native/macos/.build/checkouts/swift-transformers"]:
         if source.exists():
             for path in source.rglob("*"):
