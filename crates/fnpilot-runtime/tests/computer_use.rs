@@ -96,7 +96,7 @@ fn incomplete_extra_or_unavailable_model_actions_never_decode_to_input() {
         };
         assert_eq!(
             computer::decode(&config, &response, &screen()).unwrap(),
-            Step::Click { x: 100, y: 200 }
+            Step::Click { x: 128, y: 160 }
         );
         if runtime == Runtime::Ollama {
             response["done_reason"] = json!("length");
@@ -104,5 +104,47 @@ fn incomplete_extra_or_unavailable_model_actions_never_decode_to_input() {
             response["choices"][0]["finish_reason"] = json!("length");
         }
         assert!(computer::decode(&config, &response, &screen()).is_err());
+    }
+}
+
+#[test]
+fn model_coordinates_are_normalized_and_native_steps_use_image_pixels() {
+    let config = Configuration::default();
+    for kind in ["move", "click", "double_click", "right_click", "scroll"] {
+        let mut step = json!({"kind":kind,"x":1000,"y":1000});
+        if kind == "scroll" {
+            step["direction"] = json!("down");
+        }
+        let response =
+            json!({"done":true,"done_reason":"stop","message":{"content":step.to_string()}});
+        assert_eq!(
+            computer::decode(&config, &response, &screen())
+                .unwrap()
+                .point(),
+            Some((1279, 799))
+        );
+    }
+    let center = json!({"done":true,"done_reason":"stop","message":{"content":r#"{"kind":"click","x":500,"y":500}"#}});
+    assert_eq!(
+        computer::decode(&config, &center, &screen())
+            .unwrap()
+            .point(),
+        Some((640, 400))
+    );
+    let bad = json!({"done":true,"done_reason":"stop","message":{"content":r#"{"kind":"click","x":1001,"y":500}"#}});
+    assert!(computer::decode(&config, &bad, &screen()).is_err());
+    let request = computer::request(
+        &config,
+        "new document",
+        &screen(),
+        &[Step::Click { x: 640, y: 400 }],
+    );
+    let content = request["messages"][1]["content"].as_str().unwrap();
+    assert!(content.contains(r#""x":500"#));
+    assert!(content.contains(r#""y":500"#));
+    for item in request["format"]["oneOf"].as_array().unwrap() {
+        if item["properties"].get("x").is_some() {
+            assert_eq!(item["properties"]["x"]["maximum"], 1000);
+        }
     }
 }

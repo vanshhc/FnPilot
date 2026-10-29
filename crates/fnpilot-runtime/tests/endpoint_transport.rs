@@ -134,7 +134,7 @@ fn computer_transport_requires_local_vision_and_transmits_the_observed_image() {
         let requests = server.join().unwrap();
         assert_eq!(requests.len(), if supported { 2 } else { 1 });
         if supported {
-            assert_eq!(result.unwrap(), Step::Click { x: 100, y: 100 });
+            assert_eq!(result.unwrap(), Step::Click { x: 128, y: 80 });
             assert_eq!(requests[1]["messages"][1]["images"][0], "fixture-png");
         }
     }
