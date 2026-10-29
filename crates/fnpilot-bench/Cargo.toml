@@ -1,0 +1,16 @@
+[package]
+name = "fnpilot-bench"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+fnpilot-core.workspace = true
+fnpilot-runtime.workspace = true
+sha2.workspace = true
+
+fnpilot-speech = { workspace = true, features = ["whisper"] }
+hound = "=3.5.1"

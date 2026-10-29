@@ -1,0 +1,25 @@
+{
+  "dataset": "argmaxinc/whisperkit-test-data",
+  "revision": "df439ffa58323ef5d36d3f4caa3dd26708d834bd",
+  "humanSpeakers": [
+    "6930",
+    "1320",
+    "5639",
+    "260",
+    "7729",
+    "2094",
+    "3575",
+    "7127",
+    "2961",
+    "8463",
+    "8230",
+    "7176"
+  ],
+  "voices": [
+    "Samantha",
+    "Daniel",
+    "Rishi"
+  ],
+  "noiseSNRdB": 12,
+  "limitations": "Public read speech and generated commands; no user voice or microphone capture."
+}

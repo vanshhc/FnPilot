@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "engine": "llama.cpp",
+  "repository": "https://github.com/ggml-org/llama.cpp",
+  "tag": "b11669",
+  "revision": "620d2225cc436ab0b001e3200e590e3b286ef9ab",
+  "license": "MIT",
+  "targets": ["aarch64-apple-darwin", "x86_64-pc-windows-msvc"],
+  "cpu_baseline_required": true,
+  "distribution_qualified": false,
+  "required_inventory": ["llama-server", "dependent-native-libraries", "license", "checksums"]
+}

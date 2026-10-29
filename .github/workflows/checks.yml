@@ -1,0 +1,35 @@
+name: Contributor checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install pinned Rust
+        run: rustup toolchain install 1.99.1 --profile minimal --component rustfmt --component clippy
+      - run: npm install --global npm@11.19.0
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: cargo fmt --all -- --check
+      - run: npm run build --workspace @fnpilot/desktop
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --locked
+      - run: python -m unittest discover -s scripts/tests
+      - name: Compile portable speech (no weights)
+        run: cargo check -p fnpilot-desktop --features speech --locked
+      - name: Unsigned desktop build
+        run: npm run desktop:build
+      - name: Speech-only Swift binding tests
+        if: runner.os == 'macOS'
+        run: swift test --package-path native/macos

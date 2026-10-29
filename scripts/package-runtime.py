@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """Package an official llama.cpp build as relocatable, signed app resources."""
-import pathlib, shutil, subprocess, sys, os
+import pathlib, shutil, subprocess, sys, os, json, hashlib
+import argparse
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument("source",type=pathlib.Path)
+parser.add_argument("--revision",required=True)
+args=parser.parse_args()
 project = pathlib.Path(__file__).resolve().parent.parent
-source = pathlib.Path(sys.argv[1]).resolve()
+source = args.source.resolve()
 target = project / 'Resources' / 'Runtime'
 target.mkdir(parents=True, exist_ok=True)
+for previous in target.iterdir():
+    if previous.is_file() or previous.is_symlink(): previous.unlink()
 for binary in [source / 'llama-server', *source.glob('*.dylib')]:
     destination = target / binary.name
     if destination.exists() or destination.is_symlink(): destination.unlink()
@@ -28,3 +35,8 @@ for binary in target.iterdir():
         subprocess.run(['install_name_tool','-id','@rpath/'+binary.name,str(binary)],check=True)
     subprocess.run(['codesign','--force','--sign','-',str(binary)],check=True)
 print(target)
+
+manifest=json.loads((project/'scripts/runtime-manifest.json').read_text())
+if args.revision != manifest['revision']: raise SystemExit('Pinned helper revision mismatch')
+files={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in target.iterdir() if p.is_file() and not p.name.startswith('.')}
+(target/'.runtime-provenance.json').write_text(json.dumps({'revision':args.revision,'files':files},indent=2)+'\n')

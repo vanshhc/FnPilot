@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "FnPilot Preview",
+  "version": "0.2.0",
+  "identifier": "com.fnpilot.preview",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost; style-src 'self'; img-src 'self' data:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
+      "capabilities": [
+        "settings"
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "14.0",
+      "infoPlist": "Info.plist"
+    },
+    "icon": [
+      "icons/icon.png"
+    ]
+  }
+}

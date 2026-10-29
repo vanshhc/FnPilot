@@ -1,0 +1,1997 @@
+{
+  "decodingOptions" : {
+    "clipTimestamps" : [
+
+    ],
+    "compressionRatioThreshold" : 2.4,
+    "concurrentWorkerCount" : 1,
+    "detectLanguage" : false,
+    "firstTokenLogProbThreshold" : -1.5,
+    "language" : "en",
+    "logProbThreshold" : -1,
+    "noSpeechThreshold" : 0.6,
+    "sampleLength" : 224,
+    "skipSpecialTokens" : true,
+    "suppressBlank" : true,
+    "supressTokens" : [
+
+    ],
+    "task" : {
+      "transcribe" : {
+
+      }
+    },
+    "temperature" : 0,
+    "temperatureFallbackCount" : 0,
+    "temperatureIncrementOnFallback" : 0.2,
+    "topK" : 5,
+    "usePrefillCache" : true,
+    "usePrefillPrompt" : true,
+    "verbose" : false,
+    "withoutTimestamps" : true,
+    "wordTimestamps" : false
+  },
+  "firstDecodeSeconds" : 1.7110060416666784,
+  "manifestSHA256" : "8f449328b1232636f036fb5f4957473b90e27f5062d7c4e608b0b338681a0365",
+  "measurements" : [
+    {
+      "audioSeconds" : 3.6,
+      "category" : "human",
+      "id" : "6930-75918-0000",
+      "reference" : "concord returned to its place amidst the tents",
+      "repetition" : 0,
+      "transcript" : "Concord returned to its place amidst the tents.",
+      "transcriptionSeconds" : 1.0717696666667962
+    },
+    {
+      "audioSeconds" : 5.112,
+      "category" : "human",
+      "id" : "6930-75918-0002",
+      "reference" : "congratulations were poured in upon the princess everywhere during her journey",
+      "repetition" : 0,
+      "transcript" : "Congratulations were poured in upon the princess everywhere during her journey.",
+      "transcriptionSeconds" : 1.1730838333335214
+    },
+    {
+      "audioSeconds" : 7.92,
+      "category" : "human",
+      "id" : "1320-122617-0000",
+      "reference" : "notwithstanding the high resolution of hawkeye he fully comprehended all the difficulties and danger he was about to incur",
+      "repetition" : 0,
+      "transcript" : "Notwithstanding the high resolution of Hawkeye, he fully comprehended all the difficulties and danger he was about to incur.",
+      "transcriptionSeconds" : 1.9735416666667334
+    },
+    {
+      "audioSeconds" : 6.372,
+      "category" : "human",
+      "id" : "1320-122617-0003",
+      "reference" : "there was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind",
+      "repetition" : 0,
+      "transcript" : "There was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind.",
+      "transcriptionSeconds" : 1.7918935416666955
+    },
+    {
+      "audioSeconds" : 5.724,
+      "category" : "human",
+      "id" : "5639-40744-0005",
+      "reference" : "finally the one party went off exulting and the other was left in desolation and woe",
+      "repetition" : 0,
+      "transcript" : "Finally, the one party went off exulting, and the other was left in desolation and woe.",
+      "transcriptionSeconds" : 1.8495152499999676
+    },
+    {
+      "audioSeconds" : 5.904,
+      "category" : "human",
+      "id" : "5639-40744-0007",
+      "reference" : "meanwhile rodolfo had leocadia safe in his custody and in his own apartment",
+      "repetition" : 0,
+      "transcript" : "Meanwhile, Rodolfo had Leocalia safe in his custody and in his own apartment.",
+      "transcriptionSeconds" : 1.5027465000000575
+    },
+    {
+      "audioSeconds" : 2.268,
+      "category" : "human",
+      "id" : "260-123440-0000",
+      "reference" : "and how odd the directions will look",
+      "repetition" : 0,
+      "transcript" : "and how odd the directions will look.",
+      "transcriptionSeconds" : 0.86690204166689
+    },
+    {
+      "audioSeconds" : 1.836,
+      "category" : "human",
+      "id" : "260-123440-0001",
+      "reference" : "poor alice",
+      "repetition" : 0,
+      "transcript" : "Poor Alice.",
+      "transcriptionSeconds" : 0.5937728750000133
+    },
+    {
+      "audioSeconds" : 3.384,
+      "category" : "human",
+      "id" : "7729-102255-0000",
+      "reference" : "the bogus legislature numbered thirty six members",
+      "repetition" : 0,
+      "transcript" : "The bogus legislature numbered 36 members.",
+      "transcriptionSeconds" : 0.8965752083331608
+    },
+    {
+      "audioSeconds" : 3.528,
+      "category" : "human",
+      "id" : "7729-102255-0001",
+      "reference" : "this was at the march election eighteen fifty five",
+      "repetition" : 0,
+      "transcript" : "This was at the March election 1855.",
+      "transcriptionSeconds" : 0.9431019583332727
+    },
+    {
+      "audioSeconds" : 2.736,
+      "category" : "human",
+      "id" : "2094-142345-0004",
+      "reference" : "and what through the left hand window",
+      "repetition" : 0,
+      "transcript" : "And what through the left-hand window?",
+      "transcriptionSeconds" : 0.945365666666703
+    },
+    {
+      "audioSeconds" : 2.772,
+      "category" : "human",
+      "id" : "2094-142345-0007",
+      "reference" : "the history of the house is plain now",
+      "repetition" : 0,
+      "transcript" : "The history of the house is plain now.",
+      "transcriptionSeconds" : 0.9773478333333969
+    },
+    {
+      "audioSeconds" : 3.096,
+      "category" : "human",
+      "id" : "3575-170457-0001",
+      "reference" : "why are we to be denied each other's society",
+      "repetition" : 0,
+      "transcript" : "Why are we to be denied each other's society?",
+      "transcriptionSeconds" : 1.0659544583331808
+    },
+    {
+      "audioSeconds" : 2.196,
+      "category" : "human",
+      "id" : "3575-170457-0002",
+      "reference" : "why are we to be divided",
+      "repetition" : 0,
+      "transcript" : "Why are we to be divided?",
+      "transcriptionSeconds" : 0.8760035000000244
+    },
+    {
+      "audioSeconds" : 6.732,
+      "category" : "human",
+      "id" : "7127-75947-0001",
+      "reference" : "upon this madame deigned to turn her eyes languishingly towards the comte observing",
+      "repetition" : 0,
+      "transcript" : "Upon this, Madame deigned to turn her eyes languishingly towards the Comte, observing unabashedly.",
+      "transcriptionSeconds" : 1.993543499999987
+    },
+    {
+      "audioSeconds" : 3.312,
+      "category" : "human",
+      "id" : "7127-75947-0002",
+      "reference" : "do you think so she replied with indifference",
+      "repetition" : 0,
+      "transcript" : "\"'Do you think so?' she replied with indifference.",
+      "transcriptionSeconds" : 1.2296446249999917
+    },
+    {
+      "audioSeconds" : 7.74,
+      "category" : "human",
+      "id" : "2961-960-0007",
+      "reference" : "but they have nothing to do with the interpretation of plato and in spirit they are opposed to him",
+      "repetition" : 0,
+      "transcript" : "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him.",
+      "transcriptionSeconds" : 1.773813916666768
+    },
+    {
+      "audioSeconds" : 6.984,
+      "category" : "human",
+      "id" : "2961-960-0012",
+      "reference" : "many if not all the elements of the pre socratic philosophy are included in the timaeus",
+      "repetition" : 0,
+      "transcript" : "Many, if not all the elements of the pre-Socratic philosophy are included in the Timaeus.",
+      "transcriptionSeconds" : 1.8005330416665402
+    },
+    {
+      "audioSeconds" : 4.824,
+      "category" : "human",
+      "id" : "8463-287645-0000",
+      "reference" : "this was what did the mischief so far as the running away was concerned",
+      "repetition" : 0,
+      "transcript" : "This was what did the mischief so far as the running away was concerned.",
+      "transcriptionSeconds" : 1.4024833333332936
+    },
+    {
+      "audioSeconds" : 3.636,
+      "category" : "human",
+      "id" : "8463-287645-0001",
+      "reference" : "it is hardly necessary to say more of them here",
+      "repetition" : 0,
+      "transcript" : "It is hardly necessary to say more of them here.",
+      "transcriptionSeconds" : 1.1208199166667328
+    },
+    {
+      "audioSeconds" : 3.276,
+      "category" : "human",
+      "id" : "8230-279154-0003",
+      "reference" : "and what sort of evidence is logically possible",
+      "repetition" : 0,
+      "transcript" : "And what sort of evidence is logically possible?",
+      "transcriptionSeconds" : 0.998585708333394
+    },
+    {
+      "audioSeconds" : 7.812,
+      "category" : "human",
+      "id" : "8230-279154-0005",
+      "reference" : "all that i am doing is to use its logical tenability as a help in the analysis of what occurs when we remember",
+      "repetition" : 0,
+      "transcript" : "All that I am doing is to use its logical tunability as a help in the analysis of what occurs when we remember.",
+      "transcriptionSeconds" : 2.00754612500009
+    },
+    {
+      "audioSeconds" : 7.632,
+      "category" : "human",
+      "id" : "7176-92135-0001",
+      "reference" : "in short he becomes a prominent figure in london society and if he is not careful somebody will say so",
+      "repetition" : 0,
+      "transcript" : "In short, he becomes a prominent figure in London society, and if he is not careful, somebody will say so.",
+      "transcriptionSeconds" : 1.874185416666478
+    },
+    {
+      "audioSeconds" : 3.492,
+      "category" : "human",
+      "id" : "7176-92135-0002",
+      "reference" : "but even the unsuccessful dramatist has his moments",
+      "repetition" : 0,
+      "transcript" : "But even the unsuccessful dramatist has his moments.",
+      "transcriptionSeconds" : 1.0155923749998692
+    },
+    {
+      "audioSeconds" : 1.3865,
+      "category" : "commands-samantha",
+      "id" : "samantha-00",
+      "reference" : "Open Calculator",
+      "repetition" : 0,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.6051069166665002
+    },
+    {
+      "audioSeconds" : 1.46575,
+      "category" : "commands-samantha",
+      "id" : "samantha-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 0,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7090657500000361
+    },
+    {
+      "audioSeconds" : 1.2588125,
+      "category" : "commands-samantha",
+      "id" : "samantha-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 0,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.6062031666667735
+    },
+    {
+      "audioSeconds" : 0.984375,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-03",
+      "reference" : "Quit Safari",
+      "repetition" : 0,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.0062876249999135325
+    },
+    {
+      "audioSeconds" : 1.304625,
+      "category" : "commands-samantha",
+      "id" : "samantha-04",
+      "reference" : "Minimize the window",
+      "repetition" : 0,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7349713749999864
+    },
+    {
+      "audioSeconds" : 1.1799375,
+      "category" : "commands-samantha",
+      "id" : "samantha-05",
+      "reference" : "Restore the window",
+      "repetition" : 0,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7338110833334213
+    },
+    {
+      "audioSeconds" : 1.3946875,
+      "category" : "commands-samantha",
+      "id" : "samantha-06",
+      "reference" : "Full screen the video",
+      "repetition" : 0,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7316515833333597
+    },
+    {
+      "audioSeconds" : 1.0375625,
+      "category" : "commands-samantha",
+      "id" : "samantha-07",
+      "reference" : "Volume down",
+      "repetition" : 0,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.6106668333331982
+    },
+    {
+      "audioSeconds" : 0.921875,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-08",
+      "reference" : "Brightness up",
+      "repetition" : 0,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.008135374999937994
+    },
+    {
+      "audioSeconds" : 2.3036875,
+      "category" : "commands-samantha",
+      "id" : "samantha-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 0,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9819757500001742
+    },
+    {
+      "audioSeconds" : 2.176,
+      "category" : "commands-samantha",
+      "id" : "samantha-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 0,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7864846666666381
+    },
+    {
+      "audioSeconds" : 2.0665,
+      "category" : "commands-samantha",
+      "id" : "samantha-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 0,
+      "transcript" : "TIG please send the report tomorrow.",
+      "transcriptionSeconds" : 0.9024622500000987
+    },
+    {
+      "audioSeconds" : 1.4481875,
+      "category" : "commands-daniel",
+      "id" : "daniel-00",
+      "reference" : "Open Calculator",
+      "repetition" : 0,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5750853750000715
+    },
+    {
+      "audioSeconds" : 1.64925,
+      "category" : "commands-daniel",
+      "id" : "daniel-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 0,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7270572083332354
+    },
+    {
+      "audioSeconds" : 1.3659375,
+      "category" : "commands-daniel",
+      "id" : "daniel-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 0,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.6204051249999338
+    },
+    {
+      "audioSeconds" : 1.1275625,
+      "category" : "commands-daniel",
+      "id" : "daniel-03",
+      "reference" : "Quit Safari",
+      "repetition" : 0,
+      "transcript" : "Quid Safari",
+      "transcriptionSeconds" : 0.6196820833333732
+    },
+    {
+      "audioSeconds" : 1.3146875,
+      "category" : "commands-daniel",
+      "id" : "daniel-04",
+      "reference" : "Minimize the window",
+      "repetition" : 0,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.737655041666585
+    },
+    {
+      "audioSeconds" : 1.222,
+      "category" : "commands-daniel",
+      "id" : "daniel-05",
+      "reference" : "Restore the window",
+      "repetition" : 0,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7529767500000162
+    },
+    {
+      "audioSeconds" : 1.5418125,
+      "category" : "commands-daniel",
+      "id" : "daniel-06",
+      "reference" : "Full screen the video",
+      "repetition" : 0,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7385427916665321
+    },
+    {
+      "audioSeconds" : 1.1173125,
+      "category" : "commands-daniel",
+      "id" : "daniel-07",
+      "reference" : "Volume down",
+      "repetition" : 0,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.6108365833333664
+    },
+    {
+      "audioSeconds" : 1.012375,
+      "category" : "commands-daniel",
+      "id" : "daniel-08",
+      "reference" : "Brightness up",
+      "repetition" : 0,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6607646666666369
+    },
+    {
+      "audioSeconds" : 2.4474375,
+      "category" : "commands-daniel",
+      "id" : "daniel-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 0,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9361265833331345
+    },
+    {
+      "audioSeconds" : 2.11075,
+      "category" : "commands-daniel",
+      "id" : "daniel-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 0,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7526215416667128
+    },
+    {
+      "audioSeconds" : 2.145875,
+      "category" : "commands-daniel",
+      "id" : "daniel-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 0,
+      "transcript" : "Type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8222135833332231
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi",
+      "id" : "rishi-00",
+      "reference" : "Open Calculator",
+      "repetition" : 0,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5788438333331669
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-00-noise",
+      "reference" : "Open Calculator",
+      "repetition" : 0,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5775279583333486
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi",
+      "id" : "rishi-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 0,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.6958224583333958
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-01-noise",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 0,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7255720416667373
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi",
+      "id" : "rishi-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 0,
+      "transcript" : "Open Text Edit.",
+      "transcriptionSeconds" : 0.6693405416667702
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-02-noise",
+      "reference" : "Open TextEdit",
+      "repetition" : 0,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.602125041666568
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi",
+      "id" : "rishi-03",
+      "reference" : "Quit Safari",
+      "repetition" : 0,
+      "transcript" : "Quit Safari.",
+      "transcriptionSeconds" : 0.6214689166667995
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-03-noise",
+      "reference" : "Quit Safari",
+      "repetition" : 0,
+      "transcript" : "with Safari.",
+      "transcriptionSeconds" : 0.6203877499999635
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi",
+      "id" : "rishi-04",
+      "reference" : "Minimize the window",
+      "repetition" : 0,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7500942083333939
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-04-noise",
+      "reference" : "Minimize the window",
+      "repetition" : 0,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7245409999998174
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi",
+      "id" : "rishi-05",
+      "reference" : "Restore the window",
+      "repetition" : 0,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7717117083332141
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-05-noise",
+      "reference" : "Restore the window",
+      "repetition" : 0,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.753734458333156
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi",
+      "id" : "rishi-06",
+      "reference" : "Full screen the video",
+      "repetition" : 0,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.750236041666767
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-06-noise",
+      "reference" : "Full screen the video",
+      "repetition" : 0,
+      "transcript" : "full screen the video.",
+      "transcriptionSeconds" : 0.75339433333329
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi",
+      "id" : "rishi-07",
+      "reference" : "Volume down",
+      "repetition" : 0,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.6302220416666842
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-07-noise",
+      "reference" : "Volume down",
+      "repetition" : 0,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.6261342916666308
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi",
+      "id" : "rishi-08",
+      "reference" : "Brightness up",
+      "repetition" : 0,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6768809583334132
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-08-noise",
+      "reference" : "Brightness up",
+      "repetition" : 0,
+      "transcript" : "brightness up.",
+      "transcriptionSeconds" : 0.5741705833333981
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi",
+      "id" : "rishi-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 0,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9303964583332345
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-09-noise",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 0,
+      "transcript" : "Open notes and type by mil and n's.",
+      "transcriptionSeconds" : 1.0183223750000252
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi",
+      "id" : "rishi-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 0,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7605414166666833
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-10-noise",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 0,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7811724166667773
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi",
+      "id" : "rishi-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 0,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8203567083332928
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-11-noise",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 0,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8832623749999584
+    },
+    {
+      "audioSeconds" : 6.984,
+      "category" : "human",
+      "id" : "2961-960-0012",
+      "reference" : "many if not all the elements of the pre socratic philosophy are included in the timaeus",
+      "repetition" : 1,
+      "transcript" : "Many, if not all the elements of the pre-Socratic philosophy are included in the Timaeus.",
+      "transcriptionSeconds" : 1.6733461666667608
+    },
+    {
+      "audioSeconds" : 4.824,
+      "category" : "human",
+      "id" : "8463-287645-0000",
+      "reference" : "this was what did the mischief so far as the running away was concerned",
+      "repetition" : 1,
+      "transcript" : "This was what did the mischief so far as the running away was concerned.",
+      "transcriptionSeconds" : 1.3296597083333381
+    },
+    {
+      "audioSeconds" : 3.636,
+      "category" : "human",
+      "id" : "8463-287645-0001",
+      "reference" : "it is hardly necessary to say more of them here",
+      "repetition" : 1,
+      "transcript" : "It is hardly necessary to say more of them here.",
+      "transcriptionSeconds" : 1.030987416666676
+    },
+    {
+      "audioSeconds" : 3.276,
+      "category" : "human",
+      "id" : "8230-279154-0003",
+      "reference" : "and what sort of evidence is logically possible",
+      "repetition" : 1,
+      "transcript" : "And what sort of evidence is logically possible?",
+      "transcriptionSeconds" : 0.9139914583333848
+    },
+    {
+      "audioSeconds" : 7.812,
+      "category" : "human",
+      "id" : "8230-279154-0005",
+      "reference" : "all that i am doing is to use its logical tenability as a help in the analysis of what occurs when we remember",
+      "repetition" : 1,
+      "transcript" : "All that I am doing is to use its logical tunability as a help in the analysis of what occurs when we remember.",
+      "transcriptionSeconds" : 1.8369510833333607
+    },
+    {
+      "audioSeconds" : 7.632,
+      "category" : "human",
+      "id" : "7176-92135-0001",
+      "reference" : "in short he becomes a prominent figure in london society and if he is not careful somebody will say so",
+      "repetition" : 1,
+      "transcript" : "In short, he becomes a prominent figure in London society, and if he is not careful, somebody will say so.",
+      "transcriptionSeconds" : 1.9029285416668245
+    },
+    {
+      "audioSeconds" : 3.492,
+      "category" : "human",
+      "id" : "7176-92135-0002",
+      "reference" : "but even the unsuccessful dramatist has his moments",
+      "repetition" : 1,
+      "transcript" : "But even the unsuccessful dramatist has his moments.",
+      "transcriptionSeconds" : 0.9766879583332866
+    },
+    {
+      "audioSeconds" : 1.3865,
+      "category" : "commands-samantha",
+      "id" : "samantha-00",
+      "reference" : "Open Calculator",
+      "repetition" : 1,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5685502083333631
+    },
+    {
+      "audioSeconds" : 1.46575,
+      "category" : "commands-samantha",
+      "id" : "samantha-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 1,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.6891278749999401
+    },
+    {
+      "audioSeconds" : 1.2588125,
+      "category" : "commands-samantha",
+      "id" : "samantha-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 1,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.57173995833341
+    },
+    {
+      "audioSeconds" : 0.984375,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-03",
+      "reference" : "Quit Safari",
+      "repetition" : 1,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.005689374999974461
+    },
+    {
+      "audioSeconds" : 1.304625,
+      "category" : "commands-samantha",
+      "id" : "samantha-04",
+      "reference" : "Minimize the window",
+      "repetition" : 1,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.6889599583334984
+    },
+    {
+      "audioSeconds" : 1.1799375,
+      "category" : "commands-samantha",
+      "id" : "samantha-05",
+      "reference" : "Restore the window",
+      "repetition" : 1,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.6853602500000306
+    },
+    {
+      "audioSeconds" : 1.3946875,
+      "category" : "commands-samantha",
+      "id" : "samantha-06",
+      "reference" : "Full screen the video",
+      "repetition" : 1,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7347886249999647
+    },
+    {
+      "audioSeconds" : 1.0375625,
+      "category" : "commands-samantha",
+      "id" : "samantha-07",
+      "reference" : "Volume down",
+      "repetition" : 1,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.5873274583332204
+    },
+    {
+      "audioSeconds" : 0.921875,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-08",
+      "reference" : "Brightness up",
+      "repetition" : 1,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.006337833333191156
+    },
+    {
+      "audioSeconds" : 2.3036875,
+      "category" : "commands-samantha",
+      "id" : "samantha-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 1,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9602080000001934
+    },
+    {
+      "audioSeconds" : 2.176,
+      "category" : "commands-samantha",
+      "id" : "samantha-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 1,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7528573749998486
+    },
+    {
+      "audioSeconds" : 2.0665,
+      "category" : "commands-samantha",
+      "id" : "samantha-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 1,
+      "transcript" : "TIG please send the report tomorrow.",
+      "transcriptionSeconds" : 0.889374583333165
+    },
+    {
+      "audioSeconds" : 1.4481875,
+      "category" : "commands-daniel",
+      "id" : "daniel-00",
+      "reference" : "Open Calculator",
+      "repetition" : 1,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5806286666668257
+    },
+    {
+      "audioSeconds" : 1.64925,
+      "category" : "commands-daniel",
+      "id" : "daniel-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 1,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7137172083332644
+    },
+    {
+      "audioSeconds" : 1.3659375,
+      "category" : "commands-daniel",
+      "id" : "daniel-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 1,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.6152061249999861
+    },
+    {
+      "audioSeconds" : 1.1275625,
+      "category" : "commands-daniel",
+      "id" : "daniel-03",
+      "reference" : "Quit Safari",
+      "repetition" : 1,
+      "transcript" : "Quid Safari",
+      "transcriptionSeconds" : 0.6131225416665984
+    },
+    {
+      "audioSeconds" : 1.3146875,
+      "category" : "commands-daniel",
+      "id" : "daniel-04",
+      "reference" : "Minimize the window",
+      "repetition" : 1,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7290614583332626
+    },
+    {
+      "audioSeconds" : 1.222,
+      "category" : "commands-daniel",
+      "id" : "daniel-05",
+      "reference" : "Restore the window",
+      "repetition" : 1,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7452197916666137
+    },
+    {
+      "audioSeconds" : 1.5418125,
+      "category" : "commands-daniel",
+      "id" : "daniel-06",
+      "reference" : "Full screen the video",
+      "repetition" : 1,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7299420416668454
+    },
+    {
+      "audioSeconds" : 1.1173125,
+      "category" : "commands-daniel",
+      "id" : "daniel-07",
+      "reference" : "Volume down",
+      "repetition" : 1,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.579956541666661
+    },
+    {
+      "audioSeconds" : 1.012375,
+      "category" : "commands-daniel",
+      "id" : "daniel-08",
+      "reference" : "Brightness up",
+      "repetition" : 1,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6415558333333138
+    },
+    {
+      "audioSeconds" : 2.4474375,
+      "category" : "commands-daniel",
+      "id" : "daniel-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 1,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9212332916665673
+    },
+    {
+      "audioSeconds" : 2.11075,
+      "category" : "commands-daniel",
+      "id" : "daniel-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 1,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7549787499999638
+    },
+    {
+      "audioSeconds" : 2.145875,
+      "category" : "commands-daniel",
+      "id" : "daniel-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 1,
+      "transcript" : "Type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8420284583332887
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi",
+      "id" : "rishi-00",
+      "reference" : "Open Calculator",
+      "repetition" : 1,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.625235208333379
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-00-noise",
+      "reference" : "Open Calculator",
+      "repetition" : 1,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.6088954166666554
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi",
+      "id" : "rishi-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 1,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7038458333333892
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-01-noise",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 1,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7199530833333938
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi",
+      "id" : "rishi-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 1,
+      "transcript" : "Open Text Edit.",
+      "transcriptionSeconds" : 0.669448333333321
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-02-noise",
+      "reference" : "Open TextEdit",
+      "repetition" : 1,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.598023000000012
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi",
+      "id" : "rishi-03",
+      "reference" : "Quit Safari",
+      "repetition" : 1,
+      "transcript" : "Quit Safari.",
+      "transcriptionSeconds" : 0.6265137499999582
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-03-noise",
+      "reference" : "Quit Safari",
+      "repetition" : 1,
+      "transcript" : "with Safari.",
+      "transcriptionSeconds" : 0.6036689166667202
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi",
+      "id" : "rishi-04",
+      "reference" : "Minimize the window",
+      "repetition" : 1,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.6891965416666608
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-04-noise",
+      "reference" : "Minimize the window",
+      "repetition" : 1,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.6924574166666844
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi",
+      "id" : "rishi-05",
+      "reference" : "Restore the window",
+      "repetition" : 1,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.6972305416666131
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-05-noise",
+      "reference" : "Restore the window",
+      "repetition" : 1,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7626772083333435
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi",
+      "id" : "rishi-06",
+      "reference" : "Full screen the video",
+      "repetition" : 1,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7367957500000557
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-06-noise",
+      "reference" : "Full screen the video",
+      "repetition" : 1,
+      "transcript" : "full screen the video.",
+      "transcriptionSeconds" : 0.6929038333332755
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi",
+      "id" : "rishi-07",
+      "reference" : "Volume down",
+      "repetition" : 1,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.573440249999976
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-07-noise",
+      "reference" : "Volume down",
+      "repetition" : 1,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.5999781666666877
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi",
+      "id" : "rishi-08",
+      "reference" : "Brightness up",
+      "repetition" : 1,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6512455833333206
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-08-noise",
+      "reference" : "Brightness up",
+      "repetition" : 1,
+      "transcript" : "brightness up.",
+      "transcriptionSeconds" : 0.6034589583334764
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi",
+      "id" : "rishi-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 1,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.940819458333408
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-09-noise",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 1,
+      "transcript" : "Open notes and type by mil and n's.",
+      "transcriptionSeconds" : 1.006988500000034
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi",
+      "id" : "rishi-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 1,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7559695416666727
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-10-noise",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 1,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7802554583333858
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi",
+      "id" : "rishi-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 1,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8359749583335088
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-11-noise",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 1,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.834664708333321
+    },
+    {
+      "audioSeconds" : 3.6,
+      "category" : "human",
+      "id" : "6930-75918-0000",
+      "reference" : "concord returned to its place amidst the tents",
+      "repetition" : 1,
+      "transcript" : "Concord returned to its place amidst the tents.",
+      "transcriptionSeconds" : 1.136181958333509
+    },
+    {
+      "audioSeconds" : 5.112,
+      "category" : "human",
+      "id" : "6930-75918-0002",
+      "reference" : "congratulations were poured in upon the princess everywhere during her journey",
+      "repetition" : 1,
+      "transcript" : "Congratulations were poured in upon the princess everywhere during her journey.",
+      "transcriptionSeconds" : 1.1376850000001468
+    },
+    {
+      "audioSeconds" : 7.92,
+      "category" : "human",
+      "id" : "1320-122617-0000",
+      "reference" : "notwithstanding the high resolution of hawkeye he fully comprehended all the difficulties and danger he was about to incur",
+      "repetition" : 1,
+      "transcript" : "Notwithstanding the high resolution of Hawkeye, he fully comprehended all the difficulties and danger he was about to incur.",
+      "transcriptionSeconds" : 1.9968075416668398
+    },
+    {
+      "audioSeconds" : 6.372,
+      "category" : "human",
+      "id" : "1320-122617-0003",
+      "reference" : "there was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind",
+      "repetition" : 1,
+      "transcript" : "There was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind.",
+      "transcriptionSeconds" : 1.7976970416666518
+    },
+    {
+      "audioSeconds" : 5.724,
+      "category" : "human",
+      "id" : "5639-40744-0005",
+      "reference" : "finally the one party went off exulting and the other was left in desolation and woe",
+      "repetition" : 1,
+      "transcript" : "Finally, the one party went off exulting, and the other was left in desolation and woe.",
+      "transcriptionSeconds" : 1.8279729166667948
+    },
+    {
+      "audioSeconds" : 5.904,
+      "category" : "human",
+      "id" : "5639-40744-0007",
+      "reference" : "meanwhile rodolfo had leocadia safe in his custody and in his own apartment",
+      "repetition" : 1,
+      "transcript" : "Meanwhile, Rodolfo had Leocalia safe in his custody and in his own apartment.",
+      "transcriptionSeconds" : 1.5663023333333967
+    },
+    {
+      "audioSeconds" : 2.268,
+      "category" : "human",
+      "id" : "260-123440-0000",
+      "reference" : "and how odd the directions will look",
+      "repetition" : 1,
+      "transcript" : "and how odd the directions will look.",
+      "transcriptionSeconds" : 0.8878728333331765
+    },
+    {
+      "audioSeconds" : 1.836,
+      "category" : "human",
+      "id" : "260-123440-0001",
+      "reference" : "poor alice",
+      "repetition" : 1,
+      "transcript" : "Poor Alice.",
+      "transcriptionSeconds" : 0.5755537916668345
+    },
+    {
+      "audioSeconds" : 3.384,
+      "category" : "human",
+      "id" : "7729-102255-0000",
+      "reference" : "the bogus legislature numbered thirty six members",
+      "repetition" : 1,
+      "transcript" : "The bogus legislature numbered 36 members.",
+      "transcriptionSeconds" : 0.8665729583333359
+    },
+    {
+      "audioSeconds" : 3.528,
+      "category" : "human",
+      "id" : "7729-102255-0001",
+      "reference" : "this was at the march election eighteen fifty five",
+      "repetition" : 1,
+      "transcript" : "This was at the March election 1855.",
+      "transcriptionSeconds" : 0.9343894166668179
+    },
+    {
+      "audioSeconds" : 2.736,
+      "category" : "human",
+      "id" : "2094-142345-0004",
+      "reference" : "and what through the left hand window",
+      "repetition" : 1,
+      "transcript" : "And what through the left-hand window?",
+      "transcriptionSeconds" : 0.9402301666666517
+    },
+    {
+      "audioSeconds" : 2.772,
+      "category" : "human",
+      "id" : "2094-142345-0007",
+      "reference" : "the history of the house is plain now",
+      "repetition" : 1,
+      "transcript" : "The history of the house is plain now.",
+      "transcriptionSeconds" : 0.9476590416668387
+    },
+    {
+      "audioSeconds" : 3.096,
+      "category" : "human",
+      "id" : "3575-170457-0001",
+      "reference" : "why are we to be denied each other's society",
+      "repetition" : 1,
+      "transcript" : "Why are we to be denied each other's society?",
+      "transcriptionSeconds" : 1.075262333333285
+    },
+    {
+      "audioSeconds" : 2.196,
+      "category" : "human",
+      "id" : "3575-170457-0002",
+      "reference" : "why are we to be divided",
+      "repetition" : 1,
+      "transcript" : "Why are we to be divided?",
+      "transcriptionSeconds" : 0.8510981666665884
+    },
+    {
+      "audioSeconds" : 6.732,
+      "category" : "human",
+      "id" : "7127-75947-0001",
+      "reference" : "upon this madame deigned to turn her eyes languishingly towards the comte observing",
+      "repetition" : 1,
+      "transcript" : "Upon this, Madame deigned to turn her eyes languishingly towards the Comte, observing unabashedly.",
+      "transcriptionSeconds" : 1.8954871249998178
+    },
+    {
+      "audioSeconds" : 3.312,
+      "category" : "human",
+      "id" : "7127-75947-0002",
+      "reference" : "do you think so she replied with indifference",
+      "repetition" : 1,
+      "transcript" : "\"'Do you think so?' she replied with indifference.",
+      "transcriptionSeconds" : 1.2390367083332876
+    },
+    {
+      "audioSeconds" : 7.74,
+      "category" : "human",
+      "id" : "2961-960-0007",
+      "reference" : "but they have nothing to do with the interpretation of plato and in spirit they are opposed to him",
+      "repetition" : 1,
+      "transcript" : "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him.",
+      "transcriptionSeconds" : 1.7085163750000447
+    },
+    {
+      "audioSeconds" : 2.176,
+      "category" : "commands-samantha",
+      "id" : "samantha-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 2,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.7688805833333845
+    },
+    {
+      "audioSeconds" : 2.0665,
+      "category" : "commands-samantha",
+      "id" : "samantha-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 2,
+      "transcript" : "TIG please send the report tomorrow.",
+      "transcriptionSeconds" : 0.892494374999842
+    },
+    {
+      "audioSeconds" : 1.4481875,
+      "category" : "commands-daniel",
+      "id" : "daniel-00",
+      "reference" : "Open Calculator",
+      "repetition" : 2,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.5986700416667645
+    },
+    {
+      "audioSeconds" : 1.64925,
+      "category" : "commands-daniel",
+      "id" : "daniel-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 2,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.8110306666667384
+    },
+    {
+      "audioSeconds" : 1.3659375,
+      "category" : "commands-daniel",
+      "id" : "daniel-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 2,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.6144925833332309
+    },
+    {
+      "audioSeconds" : 1.1275625,
+      "category" : "commands-daniel",
+      "id" : "daniel-03",
+      "reference" : "Quit Safari",
+      "repetition" : 2,
+      "transcript" : "Quid Safari",
+      "transcriptionSeconds" : 0.5970392916665332
+    },
+    {
+      "audioSeconds" : 1.3146875,
+      "category" : "commands-daniel",
+      "id" : "daniel-04",
+      "reference" : "Minimize the window",
+      "repetition" : 2,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7160403749999205
+    },
+    {
+      "audioSeconds" : 1.222,
+      "category" : "commands-daniel",
+      "id" : "daniel-05",
+      "reference" : "Restore the window",
+      "repetition" : 2,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7248478333333424
+    },
+    {
+      "audioSeconds" : 1.5418125,
+      "category" : "commands-daniel",
+      "id" : "daniel-06",
+      "reference" : "Full screen the video",
+      "repetition" : 2,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.8015004583332939
+    },
+    {
+      "audioSeconds" : 1.1173125,
+      "category" : "commands-daniel",
+      "id" : "daniel-07",
+      "reference" : "Volume down",
+      "repetition" : 2,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.6196809999999005
+    },
+    {
+      "audioSeconds" : 1.012375,
+      "category" : "commands-daniel",
+      "id" : "daniel-08",
+      "reference" : "Brightness up",
+      "repetition" : 2,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6750056666667206
+    },
+    {
+      "audioSeconds" : 2.4474375,
+      "category" : "commands-daniel",
+      "id" : "daniel-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 2,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 1.107653083333389
+    },
+    {
+      "audioSeconds" : 2.11075,
+      "category" : "commands-daniel",
+      "id" : "daniel-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 2,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.8263060416666121
+    },
+    {
+      "audioSeconds" : 2.145875,
+      "category" : "commands-daniel",
+      "id" : "daniel-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 2,
+      "transcript" : "Type please send the report tomorrow.",
+      "transcriptionSeconds" : 0.8982825000000503
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi",
+      "id" : "rishi-00",
+      "reference" : "Open Calculator",
+      "repetition" : 2,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.6247549166666886
+    },
+    {
+      "audioSeconds" : 1.3830625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-00-noise",
+      "reference" : "Open Calculator",
+      "repetition" : 2,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 0.608322625000028
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi",
+      "id" : "rishi-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 2,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7175290833333747
+    },
+    {
+      "audioSeconds" : 1.563,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-01-noise",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 2,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 0.7132488333334095
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi",
+      "id" : "rishi-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 2,
+      "transcript" : "Open Text Edit.",
+      "transcriptionSeconds" : 0.6770846250001341
+    },
+    {
+      "audioSeconds" : 1.2901875,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-02-noise",
+      "reference" : "Open TextEdit",
+      "repetition" : 2,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.6408530000001065
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi",
+      "id" : "rishi-03",
+      "reference" : "Quit Safari",
+      "repetition" : 2,
+      "transcript" : "Quit Safari.",
+      "transcriptionSeconds" : 0.625758041666586
+    },
+    {
+      "audioSeconds" : 1.086625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-03-noise",
+      "reference" : "Quit Safari",
+      "repetition" : 2,
+      "transcript" : "with Safari.",
+      "transcriptionSeconds" : 0.6005011666666178
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi",
+      "id" : "rishi-04",
+      "reference" : "Minimize the window",
+      "repetition" : 2,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7399707916665648
+    },
+    {
+      "audioSeconds" : 1.3673125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-04-noise",
+      "reference" : "Minimize the window",
+      "repetition" : 2,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 0.7262170416668141
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi",
+      "id" : "rishi-05",
+      "reference" : "Restore the window",
+      "repetition" : 2,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7080228749998696
+    },
+    {
+      "audioSeconds" : 1.2394375,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-05-noise",
+      "reference" : "Restore the window",
+      "repetition" : 2,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.7115924583333708
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi",
+      "id" : "rishi-06",
+      "reference" : "Full screen the video",
+      "repetition" : 2,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7061393333333399
+    },
+    {
+      "audioSeconds" : 1.5855,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-06-noise",
+      "reference" : "Full screen the video",
+      "repetition" : 2,
+      "transcript" : "full screen the video.",
+      "transcriptionSeconds" : 0.7230517500001952
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi",
+      "id" : "rishi-07",
+      "reference" : "Volume down",
+      "repetition" : 2,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.590054999999893
+    },
+    {
+      "audioSeconds" : 1.123125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-07-noise",
+      "reference" : "Volume down",
+      "repetition" : 2,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.5875632916665836
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi",
+      "id" : "rishi-08",
+      "reference" : "Brightness up",
+      "repetition" : 2,
+      "transcript" : "Brightness up.",
+      "transcriptionSeconds" : 0.6670566249999865
+    },
+    {
+      "audioSeconds" : 1.181625,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-08-noise",
+      "reference" : "Brightness up",
+      "repetition" : 2,
+      "transcript" : "brightness up.",
+      "transcriptionSeconds" : 0.5969300833332909
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi",
+      "id" : "rishi-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 2,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 0.9561321666667482
+    },
+    {
+      "audioSeconds" : 2.67175,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-09-noise",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 2,
+      "transcript" : "Open notes and type by mil and n's.",
+      "transcriptionSeconds" : 1.0191819166666392
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi",
+      "id" : "rishi-10",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 2,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.8414564583333686
+    },
+    {
+      "audioSeconds" : 2.40475,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-10-noise",
+      "reference" : "Open Calculator then volume up",
+      "repetition" : 2,
+      "transcript" : "Open calculator then volume up.",
+      "transcriptionSeconds" : 0.9301871249999749
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi",
+      "id" : "rishi-11",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 2,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 1.5030576666667912
+    },
+    {
+      "audioSeconds" : 2.268125,
+      "category" : "commands-rishi-noise",
+      "id" : "rishi-11-noise",
+      "reference" : "Type Please send the report tomorrow",
+      "repetition" : 2,
+      "transcript" : "type please send the report tomorrow.",
+      "transcriptionSeconds" : 1.4732605416666047
+    },
+    {
+      "audioSeconds" : 3.6,
+      "category" : "human",
+      "id" : "6930-75918-0000",
+      "reference" : "concord returned to its place amidst the tents",
+      "repetition" : 2,
+      "transcript" : "Concord returned to its place amidst the tents.",
+      "transcriptionSeconds" : 1.7304253750000953
+    },
+    {
+      "audioSeconds" : 5.112,
+      "category" : "human",
+      "id" : "6930-75918-0002",
+      "reference" : "congratulations were poured in upon the princess everywhere during her journey",
+      "repetition" : 2,
+      "transcript" : "Congratulations were poured in upon the princess everywhere during her journey.",
+      "transcriptionSeconds" : 1.390789958333471
+    },
+    {
+      "audioSeconds" : 7.92,
+      "category" : "human",
+      "id" : "1320-122617-0000",
+      "reference" : "notwithstanding the high resolution of hawkeye he fully comprehended all the difficulties and danger he was about to incur",
+      "repetition" : 2,
+      "transcript" : "Notwithstanding the high resolution of Hawkeye, he fully comprehended all the difficulties and danger he was about to incur.",
+      "transcriptionSeconds" : 2.223752958333307
+    },
+    {
+      "audioSeconds" : 6.372,
+      "category" : "human",
+      "id" : "1320-122617-0003",
+      "reference" : "there was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind",
+      "repetition" : 2,
+      "transcript" : "There was something in his air and manner that betrayed to the scout the utter confusion of the state of his mind.",
+      "transcriptionSeconds" : 2.6411874166665257
+    },
+    {
+      "audioSeconds" : 5.724,
+      "category" : "human",
+      "id" : "5639-40744-0005",
+      "reference" : "finally the one party went off exulting and the other was left in desolation and woe",
+      "repetition" : 2,
+      "transcript" : "Finally, the one party went off exulting, and the other was left in desolation and woe.",
+      "transcriptionSeconds" : 2.4631540000000314
+    },
+    {
+      "audioSeconds" : 5.904,
+      "category" : "human",
+      "id" : "5639-40744-0007",
+      "reference" : "meanwhile rodolfo had leocadia safe in his custody and in his own apartment",
+      "repetition" : 2,
+      "transcript" : "Meanwhile, Rodolfo had Leocalia safe in his custody and in his own apartment.",
+      "transcriptionSeconds" : 1.7071553749999566
+    },
+    {
+      "audioSeconds" : 2.268,
+      "category" : "human",
+      "id" : "260-123440-0000",
+      "reference" : "and how odd the directions will look",
+      "repetition" : 2,
+      "transcript" : "and how odd the directions will look.",
+      "transcriptionSeconds" : 1.436922624999852
+    },
+    {
+      "audioSeconds" : 1.836,
+      "category" : "human",
+      "id" : "260-123440-0001",
+      "reference" : "poor alice",
+      "repetition" : 2,
+      "transcript" : "Poor Alice.",
+      "transcriptionSeconds" : 0.8467409583333847
+    },
+    {
+      "audioSeconds" : 3.384,
+      "category" : "human",
+      "id" : "7729-102255-0000",
+      "reference" : "the bogus legislature numbered thirty six members",
+      "repetition" : 2,
+      "transcript" : "The bogus legislature numbered 36 members.",
+      "transcriptionSeconds" : 1.3021055416666059
+    },
+    {
+      "audioSeconds" : 3.528,
+      "category" : "human",
+      "id" : "7729-102255-0001",
+      "reference" : "this was at the march election eighteen fifty five",
+      "repetition" : 2,
+      "transcript" : "This was at the March election 1855.",
+      "transcriptionSeconds" : 1.2510030416667632
+    },
+    {
+      "audioSeconds" : 2.736,
+      "category" : "human",
+      "id" : "2094-142345-0004",
+      "reference" : "and what through the left hand window",
+      "repetition" : 2,
+      "transcript" : "And what through the left-hand window?",
+      "transcriptionSeconds" : 0.9760786249999001
+    },
+    {
+      "audioSeconds" : 2.772,
+      "category" : "human",
+      "id" : "2094-142345-0007",
+      "reference" : "the history of the house is plain now",
+      "repetition" : 2,
+      "transcript" : "The history of the house is plain now.",
+      "transcriptionSeconds" : 0.9434203749999597
+    },
+    {
+      "audioSeconds" : 3.096,
+      "category" : "human",
+      "id" : "3575-170457-0001",
+      "reference" : "why are we to be denied each other's society",
+      "repetition" : 2,
+      "transcript" : "Why are we to be denied each other's society?",
+      "transcriptionSeconds" : 1.1785582499999236
+    },
+    {
+      "audioSeconds" : 2.196,
+      "category" : "human",
+      "id" : "3575-170457-0002",
+      "reference" : "why are we to be divided",
+      "repetition" : 2,
+      "transcript" : "Why are we to be divided?",
+      "transcriptionSeconds" : 1.036214500000142
+    },
+    {
+      "audioSeconds" : 6.732,
+      "category" : "human",
+      "id" : "7127-75947-0001",
+      "reference" : "upon this madame deigned to turn her eyes languishingly towards the comte observing",
+      "repetition" : 2,
+      "transcript" : "Upon this, Madame deigned to turn her eyes languishingly towards the Comte, observing unabashedly.",
+      "transcriptionSeconds" : 2.099134166666545
+    },
+    {
+      "audioSeconds" : 3.312,
+      "category" : "human",
+      "id" : "7127-75947-0002",
+      "reference" : "do you think so she replied with indifference",
+      "repetition" : 2,
+      "transcript" : "\"'Do you think so?' she replied with indifference.",
+      "transcriptionSeconds" : 1.4528460416665894
+    },
+    {
+      "audioSeconds" : 7.74,
+      "category" : "human",
+      "id" : "2961-960-0007",
+      "reference" : "but they have nothing to do with the interpretation of plato and in spirit they are opposed to him",
+      "repetition" : 2,
+      "transcript" : "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him.",
+      "transcriptionSeconds" : 2.0334382083333367
+    },
+    {
+      "audioSeconds" : 6.984,
+      "category" : "human",
+      "id" : "2961-960-0012",
+      "reference" : "many if not all the elements of the pre socratic philosophy are included in the timaeus",
+      "repetition" : 2,
+      "transcript" : "Many, if not all the elements of the pre-Socratic philosophy are included in the Timaeus.",
+      "transcriptionSeconds" : 2.084598916666664
+    },
+    {
+      "audioSeconds" : 4.824,
+      "category" : "human",
+      "id" : "8463-287645-0000",
+      "reference" : "this was what did the mischief so far as the running away was concerned",
+      "repetition" : 2,
+      "transcript" : "This was what did the mischief so far as the running away was concerned.",
+      "transcriptionSeconds" : 1.5700955416668876
+    },
+    {
+      "audioSeconds" : 3.636,
+      "category" : "human",
+      "id" : "8463-287645-0001",
+      "reference" : "it is hardly necessary to say more of them here",
+      "repetition" : 2,
+      "transcript" : "It is hardly necessary to say more of them here.",
+      "transcriptionSeconds" : 1.2208674166665787
+    },
+    {
+      "audioSeconds" : 3.276,
+      "category" : "human",
+      "id" : "8230-279154-0003",
+      "reference" : "and what sort of evidence is logically possible",
+      "repetition" : 2,
+      "transcript" : "And what sort of evidence is logically possible?",
+      "transcriptionSeconds" : 1.4275191250001171
+    },
+    {
+      "audioSeconds" : 7.812,
+      "category" : "human",
+      "id" : "8230-279154-0005",
+      "reference" : "all that i am doing is to use its logical tenability as a help in the analysis of what occurs when we remember",
+      "repetition" : 2,
+      "transcript" : "All that I am doing is to use its logical tunability as a help in the analysis of what occurs when we remember.",
+      "transcriptionSeconds" : 3.075025000000096
+    },
+    {
+      "audioSeconds" : 7.632,
+      "category" : "human",
+      "id" : "7176-92135-0001",
+      "reference" : "in short he becomes a prominent figure in london society and if he is not careful somebody will say so",
+      "repetition" : 2,
+      "transcript" : "In short, he becomes a prominent figure in London society, and if he is not careful, somebody will say so.",
+      "transcriptionSeconds" : 2.619833625000183
+    },
+    {
+      "audioSeconds" : 3.492,
+      "category" : "human",
+      "id" : "7176-92135-0002",
+      "reference" : "but even the unsuccessful dramatist has his moments",
+      "repetition" : 2,
+      "transcript" : "But even the unsuccessful dramatist has his moments.",
+      "transcriptionSeconds" : 1.3081119583332566
+    },
+    {
+      "audioSeconds" : 1.3865,
+      "category" : "commands-samantha",
+      "id" : "samantha-00",
+      "reference" : "Open Calculator",
+      "repetition" : 2,
+      "transcript" : "Open calculator.",
+      "transcriptionSeconds" : 1.0221928333332926
+    },
+    {
+      "audioSeconds" : 1.46575,
+      "category" : "commands-samantha",
+      "id" : "samantha-01",
+      "reference" : "Switch to Google Chrome",
+      "repetition" : 2,
+      "transcript" : "Switch to Google Chrome.",
+      "transcriptionSeconds" : 1.0724505833331932
+    },
+    {
+      "audioSeconds" : 1.2588125,
+      "category" : "commands-samantha",
+      "id" : "samantha-02",
+      "reference" : "Open TextEdit",
+      "repetition" : 2,
+      "transcript" : "Open Text Edit",
+      "transcriptionSeconds" : 0.8436884166665095
+    },
+    {
+      "audioSeconds" : 0.984375,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-03",
+      "reference" : "Quit Safari",
+      "repetition" : 2,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.011233458333208546
+    },
+    {
+      "audioSeconds" : 1.304625,
+      "category" : "commands-samantha",
+      "id" : "samantha-04",
+      "reference" : "Minimize the window",
+      "repetition" : 2,
+      "transcript" : "Minimize the window.",
+      "transcriptionSeconds" : 1.104724833333421
+    },
+    {
+      "audioSeconds" : 1.1799375,
+      "category" : "commands-samantha",
+      "id" : "samantha-05",
+      "reference" : "Restore the window",
+      "repetition" : 2,
+      "transcript" : "Restore the window.",
+      "transcriptionSeconds" : 0.8031880833332252
+    },
+    {
+      "audioSeconds" : 1.3946875,
+      "category" : "commands-samantha",
+      "id" : "samantha-06",
+      "reference" : "Full screen the video",
+      "repetition" : 2,
+      "transcript" : "Full screen the video.",
+      "transcriptionSeconds" : 0.7613505833335239
+    },
+    {
+      "audioSeconds" : 1.0375625,
+      "category" : "commands-samantha",
+      "id" : "samantha-07",
+      "reference" : "Volume down",
+      "repetition" : 2,
+      "transcript" : "Volume down.",
+      "transcriptionSeconds" : 0.7041095416666394
+    },
+    {
+      "audioSeconds" : 0.921875,
+      "category" : "commands-samantha",
+      "error" : "No speech was recognized.",
+      "id" : "samantha-08",
+      "reference" : "Brightness up",
+      "repetition" : 2,
+      "transcript" : "",
+      "transcriptionSeconds" : 0.009768666666559511
+    },
+    {
+      "audioSeconds" : 2.3036875,
+      "category" : "commands-samantha",
+      "id" : "samantha-09",
+      "reference" : "Open Notes and type Buy milk and eggs",
+      "repetition" : 2,
+      "transcript" : "Open notes and type by milk and eggs.",
+      "transcriptionSeconds" : 1.5822941666665429
+    }
+  ],
+  "model" : "openai_whisper-large-v3_turbo",
+  "modelLoadSeconds" : 93.36012837500016,
+  "osVersion" : "Version 27.0.1 (Build 26A434)",
+  "padsShortAudio" : false,
+  "physicalMemoryBytes" : 17179869184,
+  "repetitions" : 3,
+  "thermalStateAtEnd" : 1,
+  "thermalStateAtStart" : 0,
+  "warmupDecodes" : 3
+}

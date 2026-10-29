@@ -1,0 +1,104 @@
+name: Signed release candidates
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  native:
+    environment: official-release
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    env:
+      ACCEPTANCE_RECEIPTS_JSON: ${{ vars.ACCEPTANCE_RECEIPTS_JSON }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Require exact tagged revision and reviewed native evidence
+        run: python scripts/release/check-gates.py
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: rustup toolchain install 1.99.1 --profile minimal --component rustfmt --component clippy
+      - run: npm install --global npm@11.19.0
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build --workspace @fnpilot/desktop
+      - run: cargo test --workspace --locked
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: python -m unittest discover -s scripts/tests
+      - name: Stage locked CLI, helper, licenses and SBOM
+        run: python scripts/stage-desktop.py
+      - name: Build and relocate macOS candidate
+        if: runner.os == 'macOS'
+        run: |
+          npm run tauri --workspace @fnpilot/desktop -- build --no-sign --config src-tauri/tauri.official.conf.json --bundles app
+          python3 scripts/relocate-swift-runtime.py 'target/release/bundle/macos/FnPilot.app'
+      - name: Import Developer ID and notarization credentials
+        if: runner.os == 'macOS'
+        env:
+          APPLE_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_API_KEY_BASE64: ${{ secrets.APPLE_API_KEY_BASE64 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os,base64,pathlib
+          root=pathlib.Path(os.environ['RUNNER_TEMP'])
+          for variable,name in [('APPLE_CERTIFICATE_BASE64','identity.p12'),('APPLE_API_KEY_BASE64','notary.p8')]:
+              data=base64.b64decode(os.environ[variable],validate=True)
+              if not data: raise ValueError('Missing protected signing credential')
+              (root/name).write_bytes(data)
+              (root/name).chmod(0o600)
+          PY
+          keychain_password="$(openssl rand -hex 24)"
+          echo "::add-mask::$keychain_password"
+          security create-keychain -p "$keychain_password" "$RUNNER_TEMP/release.keychain-db"
+          security set-keychain-settings -lut 3600 "$RUNNER_TEMP/release.keychain-db"
+          security unlock-keychain -p "$keychain_password" "$RUNNER_TEMP/release.keychain-db"
+          security import "$RUNNER_TEMP/identity.p12" -k "$RUNNER_TEMP/release.keychain-db" -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$keychain_password" "$RUNNER_TEMP/release.keychain-db"
+          security list-keychains -d user -s "$RUNNER_TEMP/release.keychain-db"
+      - name: Sign, notarize and staple macOS candidate
+        if: runner.os == 'macOS'
+        env:
+          APPLE_SIGNING_IDENTITY: ${{ vars.APPLE_SIGNING_IDENTITY }}
+          APPLE_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+          APPLE_API_KEY_ID: ${{ vars.APPLE_API_KEY_ID }}
+          APPLE_API_ISSUER: ${{ vars.APPLE_API_ISSUER }}
+        run: |
+          export APPLE_API_KEY_PATH="$RUNNER_TEMP/notary.p8"
+          python3 scripts/release/sign-macos.py 'target/release/bundle/macos/FnPilot.app'
+          mkdir -p target/distribution
+          hdiutil create -volname FnPilot -srcfolder 'target/release/bundle/macos/FnPilot.app' -ov -format UDZO target/distribution/FnPilot.dmg
+          codesign --timestamp --sign "$APPLE_SIGNING_IDENTITY" target/distribution/FnPilot.dmg
+          xcrun notarytool submit target/distribution/FnPilot.dmg --key "$APPLE_API_KEY_PATH" --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER" --wait --timeout 30m
+          xcrun stapler staple target/distribution/FnPilot.dmg
+          xcrun stapler validate target/distribution/FnPilot.dmg
+      - name: Sign and bundle Windows candidate with offline WebView2 setup
+        if: runner.os == 'Windows'
+        env:
+          WINDOWS_PFX_BASE64: ${{ secrets.WINDOWS_PFX_BASE64 }}
+          WINDOWS_PFX_PASSWORD: ${{ secrets.WINDOWS_PFX_PASSWORD }}
+          WINDOWS_CERTIFICATE_THUMBPRINT: ${{ vars.WINDOWS_CERTIFICATE_THUMBPRINT }}
+          WINDOWS_TIMESTAMP_URL: ${{ vars.WINDOWS_TIMESTAMP_URL }}
+        run: ./scripts/release/build-windows.ps1
+      - name: Package matching signed resources and create exact inventory
+        run: python scripts/release/collect.py
+      - name: Verify exact inventory
+        run: python scripts/release/verify-artifacts.py target/release-manifest.json target/distribution --revision ${{ github.sha }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: signed-candidate-${{ matrix.os }}
+          path: |
+            target/distribution/
+            target/release-manifest.json
+          if-no-files-found: error
+      - name: Remove ephemeral macOS credentials
+        if: always() && runner.os == 'macOS'
+        run: |
+          security delete-keychain "$RUNNER_TEMP/release.keychain-db" || true
+          rm -f "$RUNNER_TEMP/identity.p12" "$RUNNER_TEMP/notary.p8"

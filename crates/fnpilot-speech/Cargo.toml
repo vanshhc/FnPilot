@@ -1,0 +1,17 @@
+[package]
+name = "fnpilot-speech"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+fnpilot-core.workspace = true
+sha2.workspace = true
+whisper-rs = { version = "=0.16.0", optional = true, default-features = false }
+
+[features]
+default = []
+whisper = ["dep:whisper-rs"]

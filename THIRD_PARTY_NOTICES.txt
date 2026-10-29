@@ -483,3 +483,18 @@ Model weights are downloaded separately and are not included in this app bundle.
 Liquid model license: https://huggingface.co/LiquidAI/LFM2.5-350M/blob/main/LICENSE
 Whisper Core ML model: https://huggingface.co/argmaxinc/whisperkit-coreml
 Exploratory Llama model license: https://ollama.com/library/llama3.2
+
+
+Rust/Tauri migration preview
+==================================================
+Rust and Node dependency versions, declared licenses and upstream repositories are
+recorded in docs/dependency-inventory.json (generated from Cargo.lock and
+package-lock.json). Tauri and its Rust/JavaScript dependencies retain their
+upstream licenses. The optional speech backend uses whisper-rs 0.16.0 and the
+locked whisper-rs-sys / whisper.cpp source, with upstream MIT notices. Windows
+bindings, CPAL and winreg retain their upstream declared licenses.
+
+The original geometric preview icon is FnPilot-owned MIT material. No model
+weights, audio clips, generated voices or third-party screenshots were added to
+this preview's source. Complete transitive NOTICE/license collection and native
+runtime redistribution review remain required before an official binary release.

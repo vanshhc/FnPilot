@@ -1,0 +1,6 @@
+{
+  "revision": "defefaefe33dc6dbb45005958abaea1c0f8293ff",
+  "path": "Sources/WhisperKit/Core/Utils.swift",
+  "old": "    // Fallback to loading from the Hub if local loading is not possible or fails\n    Logging.debug(\"Loading tokenizer from Hub\")\n    return try await WhisperTokenizerWrapper(\n        tokenizer: AutoTokenizer.from(\n            pretrained: tokenizerName,\n            hubApi: hubApi\n        )\n    )",
+  "new": "    // FnPilot: command execution must never acquire tokenizer assets over the network.\n    throw WhisperError.tokenizerUnavailable()"
+}

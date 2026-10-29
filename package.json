@@ -1,0 +1,19 @@
+{
+  "name": "fnpilot",
+  "private": true,
+  "version": "0.2.0",
+  "workspaces": [
+    "apps/desktop"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "npm@11.19.0",
+  "scripts": {
+    "check": "npm run check --workspace @fnpilot/desktop",
+    "test": "npm test --workspace @fnpilot/desktop",
+    "ui:dev": "npm run dev --workspace @fnpilot/desktop",
+    "desktop:dev": "npm run tauri --workspace @fnpilot/desktop -- dev",
+    "desktop:build": "node scripts/build-desktop.mjs"
+  }
+}
