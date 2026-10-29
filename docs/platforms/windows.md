@@ -12,4 +12,4 @@ The overlay uses `WS_EX_NOACTIVATE` and `SW_SHOWNOACTIVATE`. Hardware acceptance
 
 WebView2 must be installed. The optional NSIS config is per-user. Its bootstrapper needs network if WebView2 is absent; official release candidates select Tauri’s offline WebView2 installer. Native installation and upgrade still require qualification. The uninstall hook removes only the matching installation’s launch-at-login entry and preserves user data.
 
-The MSVC target selects the static CRT for the Rust host and native CPU speech build; the helper uses `MultiThreaded` CRT. Qualification must still inspect actual imports/DLLs on a clean Windows machine.
+The MSVC target selects the static CRT for the Rust host. Cargo also passes CMake policy CMP0091 and `MultiThreaded` to the native CPU speech build, keeping whisper.cpp on the same runtime; the helper uses `MultiThreaded` CRT. Qualification must still inspect actual imports/DLLs on a clean Windows machine.

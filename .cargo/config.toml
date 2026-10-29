@@ -1,3 +1,9 @@
+[env]
+# whisper-rs forwards CMAKE_* values to its native CMake build. Its older
+# minimum CMake version needs CMP0091 enabled before selecting the static CRT.
+CMAKE_POLICY_DEFAULT_CMP0091 = "NEW"
+CMAKE_MSVC_RUNTIME_LIBRARY = "MultiThreaded"
+
 [target.x86_64-pc-windows-msvc]
 # Keep the CPU speech decoder and Rust host self-contained on clean Windows 11.
 rustflags = ["-C", "target-feature=+crt-static"]
