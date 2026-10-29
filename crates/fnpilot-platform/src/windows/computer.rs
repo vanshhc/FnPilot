@@ -134,7 +134,7 @@ fn capture(bounds: RECT) -> Result<(Vec<u8>, u32, u32)> {
         {
             return Err("Could not read screenshot pixels.".into());
         }
-        for pixel in data.chunks_exact_mut(4) {
+        for pixel in data.as_chunks_mut::<4>().0 {
             pixel.swap(0, 2);
             pixel[3] = 255;
         }
